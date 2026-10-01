@@ -1,0 +1,102 @@
+{
+  point: "warning"
+  note: "no server URL in the definition (servers[0].url): the SDK takes it as the server variable `base`; set the `server` build option to fix one"
+}
+
+
+{
+  point: "warning"
+  step: "flow"
+  note: "flow name BasicConfigMapFlow collides with another when case is ignored: file written as BasicConfigMapFlow__1.aontu"
+}
+
+
+{
+  point: "warning"
+  step: "flow"
+  note: "flow name BasicConfigmapFlow collides with another when case is ignored: file written as BasicConfigmapFlow__2.aontu"
+}
+
+
+{
+  point: "warning"
+  step: "flow"
+  note: "flow name BasicLimitRangeFlow collides with another when case is ignored: file written as BasicLimitRangeFlow__1.aontu"
+}
+
+
+{
+  point: "warning"
+  step: "flow"
+  note: "flow name BasicLimitrangeFlow collides with another when case is ignored: file written as BasicLimitrangeFlow__2.aontu"
+}
+
+
+{
+  point: "warning"
+  step: "flow"
+  note: "flow name BasicPersistentVolumeClaimFlow collides with another when case is ignored: file written as BasicPersistentVolumeClaimFlow__1.aontu"
+}
+
+
+{
+  point: "warning"
+  step: "flow"
+  note: "flow name BasicPersistentVolumeFlow collides with another when case is ignored: file written as BasicPersistentVolumeFlow__1.aontu"
+}
+
+
+{
+  point: "warning"
+  step: "flow"
+  note: "flow name BasicPersistentvolumeFlow collides with another when case is ignored: file written as BasicPersistentvolumeFlow__2.aontu"
+}
+
+
+{
+  point: "warning"
+  step: "flow"
+  note: "flow name BasicPersistentvolumeclaimFlow collides with another when case is ignored: file written as BasicPersistentvolumeclaimFlow__2.aontu"
+}
+
+
+{
+  point: "warning"
+  step: "flow"
+  note: "flow name BasicPodTemplateFlow collides with another when case is ignored: file written as BasicPodTemplateFlow__1.aontu"
+}
+
+
+{
+  point: "warning"
+  step: "flow"
+  note: "flow name BasicPodtemplateFlow collides with another when case is ignored: file written as BasicPodtemplateFlow__2.aontu"
+}
+
+
+{
+  point: "warning"
+  step: "flow"
+  note: "flow name BasicResourceQuotaFlow collides with another when case is ignored: file written as BasicResourceQuotaFlow__1.aontu"
+}
+
+
+{
+  point: "warning"
+  step: "flow"
+  note: "flow name BasicResourcequotaFlow collides with another when case is ignored: file written as BasicResourcequotaFlow__2.aontu"
+}
+
+
+{
+  point: "warning"
+  step: "flow"
+  note: "flow name BasicServiceAccountFlow collides with another when case is ignored: file written as BasicServiceAccountFlow__1.aontu"
+}
+
+
+{
+  point: "warning"
+  step: "flow"
+  note: "flow name BasicServiceaccountFlow collides with another when case is ignored: file written as BasicServiceaccountFlow__2.aontu"
+}

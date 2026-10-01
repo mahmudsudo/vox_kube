@@ -1,0 +1,36 @@
+# BasicSafelistFlow
+
+main: kit: flow: BasicSafelistFlow:
+{
+  entity: "safelist",
+  kind: "basic",
+  name: "BasicSafelistFlow",
+  step: [
+    {
+      i: {
+        ref: "safelist_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "safelist_ref01",
+        srcdatavar: "safelist_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-safelist_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSafelistFlow"
+}

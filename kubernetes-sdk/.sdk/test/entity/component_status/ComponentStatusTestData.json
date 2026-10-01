@@ -1,0 +1,52 @@
+{
+  "existing": {
+    "component_status": {
+      "COMPONENT_STATUS00": {
+        "apiVersion": "s28",
+        "conditions": [],
+        "kind": "s2a",
+        "metadata": "s2b",
+        "name": "NAME01",
+        "id": "COMPONENT_STATUS00"
+      },
+      "COMPONENT_STATUS01": {
+        "apiVersion": "s50",
+        "conditions": [],
+        "kind": "s52",
+        "metadata": "s53",
+        "name": "NAME01",
+        "id": "COMPONENT_STATUS01"
+      },
+      "COMPONENT_STATUS02": {
+        "apiVersion": "s78",
+        "conditions": [],
+        "kind": "s7a",
+        "metadata": "s7b",
+        "name": "NAME01",
+        "id": "COMPONENT_STATUS02"
+      }
+    }
+  },
+  "new": {
+    "component_status": {
+      "component_status_ref01": {
+        "apiVersion": "sa0",
+        "conditions": [],
+        "kind": "sa2",
+        "metadata": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/componentstatuses": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/componentstatuses/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

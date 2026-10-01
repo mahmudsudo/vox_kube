@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "secondary": {
+      "SECONDARY00": {
+        "account_sid": "s32",
+        "date_created": "s33",
+        "date_updated": "s34",
+        "secondary_auth_token": "s35",
+        "url": "s36",
+        "id": "SECONDARY00"
+      },
+      "SECONDARY01": {
+        "account_sid": "s64",
+        "date_created": "s65",
+        "date_updated": "s66",
+        "secondary_auth_token": "s67",
+        "url": "s68",
+        "id": "SECONDARY01"
+      },
+      "SECONDARY02": {
+        "account_sid": "s96",
+        "date_created": "s97",
+        "date_updated": "s98",
+        "secondary_auth_token": "s99",
+        "url": "s9a",
+        "id": "SECONDARY02"
+      }
+    }
+  },
+  "new": {
+    "secondary": {
+      "secondary_ref01": {
+        "account_sid": "sc8",
+        "date_created": "sc9",
+        "date_updated": "sca",
+        "secondary_auth_token": "scb",
+        "url": "scc"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/AuthTokens/Secondary": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "existing": {
+    "resource_quota_list": {
+      "RESOURCE_QUOTA_LIST00": {
+        "apiVersion": "s32",
+        "kind": "s33",
+        "metadata": "s34",
+        "spec": "s35",
+        "status": "s36",
+        "namespace_id": "NAMESPACE01"
+      },
+      "RESOURCE_QUOTA_LIST01": {
+        "apiVersion": "s64",
+        "kind": "s65",
+        "metadata": "s66",
+        "spec": "s67",
+        "status": "s68",
+        "namespace_id": "NAMESPACE01"
+      },
+      "RESOURCE_QUOTA_LIST02": {
+        "apiVersion": "s96",
+        "kind": "s97",
+        "metadata": "s98",
+        "spec": "s99",
+        "status": "s9a",
+        "namespace_id": "NAMESPACE01"
+      }
+    }
+  },
+  "new": {
+    "resource_quota_list": {
+      "resource_quota_list_ref01": {
+        "apiVersion": "sc8",
+        "kind": "sc9",
+        "metadata": "sca",
+        "spec": "scb",
+        "status": "scc"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/namespaces/{namespace}/resourcequotas": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/resourcequotas": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "accounts_v1_secondary_auth_token": {
+      "ACCOUNTS_V1_SECONDARY_AUTH_TOKEN00": {
+        "id": "ACCOUNTS_V1_SECONDARY_AUTH_TOKEN00"
+      },
+      "ACCOUNTS_V1_SECONDARY_AUTH_TOKEN01": {
+        "id": "ACCOUNTS_V1_SECONDARY_AUTH_TOKEN01"
+      },
+      "ACCOUNTS_V1_SECONDARY_AUTH_TOKEN02": {
+        "id": "ACCOUNTS_V1_SECONDARY_AUTH_TOKEN02"
+      }
+    }
+  },
+  "new": {
+    "accounts_v1_secondary_auth_token": {
+      "accounts_v1_secondary_auth_token_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /v1/AuthTokens/Secondary": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

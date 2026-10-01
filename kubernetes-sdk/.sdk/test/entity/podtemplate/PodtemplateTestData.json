@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "podtemplate": {
+      "PODTEMPLATE00": {
+        "id": "PODTEMPLATE00",
+        "object": "s1f",
+        "type": "s20",
+        "namespace_id": "NAMESPACE01"
+      },
+      "PODTEMPLATE01": {
+        "id": "PODTEMPLATE01",
+        "object": "s3d",
+        "type": "s3e",
+        "namespace_id": "NAMESPACE01"
+      },
+      "PODTEMPLATE02": {
+        "id": "PODTEMPLATE02",
+        "object": "s5b",
+        "type": "s5c",
+        "namespace_id": "NAMESPACE01"
+      }
+    }
+  },
+  "new": {
+    "podtemplate": {
+      "podtemplate_ref01": {
+        "object": "s79",
+        "type": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/watch/namespaces/{namespace}/podtemplates/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/namespaces/{namespace}/podtemplates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/podtemplates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

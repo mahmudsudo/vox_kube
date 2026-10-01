@@ -1,0 +1,22 @@
+# BasicReplicationControllerListFlow
+
+main: kit: flow: BasicReplicationControllerListFlow:
+{
+  entity: "replication_controller_list",
+  kind: "basic",
+  name: "BasicReplicationControllerListFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "replication_controller_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicReplicationControllerListFlow"
+}

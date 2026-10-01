@@ -1,0 +1,111 @@
+# BasicPodFlow
+
+main: kit: flow: BasicPodFlow:
+{
+  entity: "pod",
+  kind: "basic",
+  name: "BasicPodFlow",
+  step: [
+    {
+      i: {
+        ref: "pod_ref01"
+      }
+
+      m: {
+        name: "name01",
+        namespace_id: "namespace01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "pod_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      d: {
+        namespace_id: "namespace01"
+      }
+
+      i: {
+        ref: "pod_ref01",
+        srcdatavar: "pod_ref01_data",
+        suffix: "_up0",
+        textfield: "apiVersion"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-pod_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "pod_ref01",
+        srcdatavar: "pod_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "pod01",
+        namespace_id: "namespace01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-pod_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "pod_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        id: "pod01",
+        namespace_id: "namespace01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "pod_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPodFlow"
+}

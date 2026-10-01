@@ -1,0 +1,68 @@
+# BasicConfigMapFlow
+
+main: kit: flow: BasicConfigMapFlow:
+{
+  entity: "config_map",
+  kind: "basic",
+  name: "BasicConfigMapFlow",
+  step: [
+    {
+      i: {
+        ref: "config_map_ref01"
+      }
+
+      m: {
+        namespace_id: "namespace01"
+      }
+
+      o: "create"
+    }
+
+    {
+      d: {
+        namespace_id: "namespace01"
+      }
+
+      i: {
+        ref: "config_map_ref01",
+        srcdatavar: "config_map_ref01_data",
+        suffix: "_up0",
+        textfield: "apiVersion"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-config_map_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "config_map_ref01",
+        srcdatavar: "config_map_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "config_map01",
+        namespace_id: "namespace01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-config_map_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicConfigMapFlow"
+}

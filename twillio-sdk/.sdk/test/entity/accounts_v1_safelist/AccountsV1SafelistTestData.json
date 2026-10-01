@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "accounts_v1_safelist": {
+      "ACCOUNTS_V1_SAFELIST00": {
+        "id": "ACCOUNTS_V1_SAFELIST00"
+      },
+      "ACCOUNTS_V1_SAFELIST01": {
+        "id": "ACCOUNTS_V1_SAFELIST01"
+      },
+      "ACCOUNTS_V1_SAFELIST02": {
+        "id": "ACCOUNTS_V1_SAFELIST02"
+      }
+    }
+  },
+  "new": {
+    "accounts_v1_safelist": {
+      "accounts_v1_safelist_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /v1/SafeList/Numbers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

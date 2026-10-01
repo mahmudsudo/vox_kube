@@ -1,0 +1,57 @@
+{
+  "existing": {
+    "config_map_list": {
+      "CONFIG_MAP_LIST00": {
+        "apiVersion": "s3c",
+        "binaryData": {},
+        "data": {},
+        "immutable": false,
+        "kind": "s40",
+        "metadata": "s41",
+        "namespace_id": "NAMESPACE01"
+      },
+      "CONFIG_MAP_LIST01": {
+        "apiVersion": "s78",
+        "binaryData": {},
+        "data": {},
+        "immutable": false,
+        "kind": "s7c",
+        "metadata": "s7d",
+        "namespace_id": "NAMESPACE01"
+      },
+      "CONFIG_MAP_LIST02": {
+        "apiVersion": "sb4",
+        "binaryData": {},
+        "data": {},
+        "immutable": false,
+        "kind": "sb8",
+        "metadata": "sb9",
+        "namespace_id": "NAMESPACE01"
+      }
+    }
+  },
+  "new": {
+    "config_map_list": {
+      "config_map_list_ref01": {
+        "apiVersion": "sf0",
+        "binaryData": {},
+        "data": {},
+        "immutable": false,
+        "kind": "sf4",
+        "metadata": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/namespaces/{namespace}/configmaps": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/configmaps": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,471 @@
+# Entity: resource_quota
+
+main: kit: entity: resource_quota: {
+
+  alias: field: {}
+
+  fields: {
+    apiVersion: {
+      h: "Api Version"
+      n: "apiVersion"
+      r: false
+      sh: "APIVersion defines the versioned schema of this representation of an object."
+      t: "`$STRING`"
+    }
+    kind: {
+      h: "Kind"
+      n: "kind"
+      r: false
+      sh: "Kind is a string value representing the REST resource this object represents."
+      t: "`$STRING`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "metadata is the standard object's metadata."
+      t: "`$ANY`"
+    }
+    spec: {
+      h: "Spec"
+      n: "spec"
+      r: false
+      sh: "spec defines the desired quota."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 5
+      }
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "status defines the actual enforced quota and its current usage."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 2
+        depth: 5
+      }
+    }
+  }
+
+  name: "resource_quota"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/v1/namespaces/{namespace}/resourcequotas/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/namespaces/{namespace}/resourcequotas/{name}"
+          q: {
+            exist: [
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "resourcequotas"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /api/v1/namespaces/{namespace}/resourcequotas/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "grace_period_second"
+                or: "gracePeriodSeconds"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "ignore_store_read_error_with_cluster_breaking_potential"
+                or: "ignoreStoreReadErrorWithClusterBreakingPotential"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "orphan_dependent"
+                or: "orphanDependents"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "propagation_policy"
+                or: "propagationPolicy"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/v1/namespaces/{namespace}/resourcequotas/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "grace_period_second"
+              "ignore_store_read_error_with_cluster_breaking_potential"
+              "name"
+              "namespace_id"
+              "orphan_dependent"
+              "pretty"
+              "propagation_policy"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "resourcequotas"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /api/v1/namespaces/{namespace}/resourcequotas/{name}/status"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "force"
+                or: "force"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/namespaces/{namespace}/resourcequotas/{name}/status"
+          q: {
+            "$action": "status"
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "force"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "resourcequotas"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "status"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /api/v1/namespaces/{namespace}/resourcequotas/{name}/status"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/namespaces/{namespace}/resourcequotas/{name}/status"
+          q: {
+            "$action": "status"
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "resourcequotas"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "status"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.namespace") path("$.main.kit.entity.resourcequota")]
+  ]
+
+}

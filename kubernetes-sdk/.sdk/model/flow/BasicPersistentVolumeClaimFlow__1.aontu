@@ -1,0 +1,56 @@
+# BasicPersistentVolumeClaimFlow
+
+main: kit: flow: BasicPersistentVolumeClaimFlow:
+{
+  entity: "persistent_volume_claim",
+  kind: "basic",
+  name: "BasicPersistentVolumeClaimFlow",
+  step: [
+    {
+      d: {
+        namespace_id: "namespace01"
+      }
+
+      i: {
+        ref: "persistent_volume_claim_ref01",
+        srcdatavar: "persistent_volume_claim_ref01_data",
+        suffix: "_up0",
+        textfield: "apiVersion"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-persistent_volume_claim_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "persistent_volume_claim_ref01",
+        srcdatavar: "persistent_volume_claim_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "persistent_volume_claim01",
+        namespace_id: "namespace01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-persistent_volume_claim_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPersistentVolumeClaimFlow"
+}

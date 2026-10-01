@@ -1,0 +1,2231 @@
+{
+  "def": "api1.json",
+  "main": {
+    "def": {
+      "desc": ""
+    },
+    "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
+      "config": {
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ],
+        "headers": {
+          "content-type": "application/json"
+        },
+        "repr": "auto"
+      },
+      "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "github-pages": {
+            "active": false,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "github-pages",
+            "name": "github-pages",
+            "origname": "",
+            "output": {
+              "path": "docs"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          },
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
+      "entity": {
+        "accounts_v1_aw": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "account_sid": {
+              "a": true,
+              "h": "Account Sid",
+              "n": "account_sid",
+              "r": false,
+              "sh": "The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the AWS resource.",
+              "t": "`$STRING`"
+            },
+            "date_created": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Date Created",
+              "n": "date_created",
+              "r": false,
+              "sh": "The date and time in GMT when the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.",
+              "t": "`$STRING`"
+            },
+            "date_updated": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Date Updated",
+              "n": "date_updated",
+              "r": false,
+              "sh": "The date and time in GMT when the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.",
+              "t": "`$STRING`"
+            },
+            "friendly_name": {
+              "a": true,
+              "h": "Friendly Name",
+              "n": "friendly_name",
+              "r": false,
+              "sh": "The string that you assigned to describe the resource.",
+              "t": "`$STRING`"
+            },
+            "sid": {
+              "a": true,
+              "h": "Sid",
+              "n": "sid",
+              "r": false,
+              "sh": "The unique string that we created to identify the AWS resource.",
+              "t": "`$STRING`"
+            },
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "sh": "The URI for this resource, relative to `https://accounts.twilio.com`",
+              "t": "`$STRING`"
+            }
+          },
+          "name": "accounts_v1_aw",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /v1/Credentials/AWS",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/v1/Credentials/AWS",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "Credentials"
+                    },
+                    {
+                      "lit": "AWS"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/Credentials/AWS",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page",
+                        "or": "Page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page_size",
+                        "or": "PageSize",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page_token",
+                        "or": "PageToken",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/Credentials/AWS",
+                  "q": {
+                    "exist": [
+                      "page",
+                      "page_size",
+                      "page_token"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "Credentials"
+                    },
+                    {
+                      "lit": "AWS"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.credentials`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /v1/Credentials/AWS/{Sid}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "sid",
+                        "or": "Sid",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/v1/Credentials/AWS/{Sid}",
+                  "q": {
+                    "exist": [
+                      "sid"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "Sid": "sid"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "Credentials"
+                    },
+                    {
+                      "lit": "AWS"
+                    },
+                    {
+                      "var": "sid"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "accounts_v1_public_key": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "account_sid": {
+              "a": true,
+              "h": "Account Sid",
+              "n": "account_sid",
+              "r": false,
+              "sh": "The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Credential that the PublicKey resource belongs to.",
+              "t": "`$STRING`"
+            },
+            "date_created": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Date Created",
+              "n": "date_created",
+              "r": false,
+              "sh": "The date and time in GMT when the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.",
+              "t": "`$STRING`"
+            },
+            "date_updated": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Date Updated",
+              "n": "date_updated",
+              "r": false,
+              "sh": "The date and time in GMT when the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.",
+              "t": "`$STRING`"
+            },
+            "friendly_name": {
+              "a": true,
+              "h": "Friendly Name",
+              "n": "friendly_name",
+              "r": false,
+              "sh": "The string that you assigned to describe the resource.",
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "sid": {
+              "a": true,
+              "h": "Sid",
+              "n": "sid",
+              "r": false,
+              "sh": "The unique string that that we created to identify the PublicKey resource.",
+              "t": "`$STRING`"
+            },
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "sh": "The URI for this resource, relative to `https://accounts.twilio.com`",
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "accounts_v1_public_key",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /v1/Credentials/PublicKeys",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/v1/Credentials/PublicKeys",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "Credentials"
+                    },
+                    {
+                      "lit": "PublicKeys"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/Credentials/PublicKeys",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page",
+                        "or": "Page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page_size",
+                        "or": "PageSize",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page_token",
+                        "or": "PageToken",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/Credentials/PublicKeys",
+                  "q": {
+                    "exist": [
+                      "page",
+                      "page_size",
+                      "page_token"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "Credentials"
+                    },
+                    {
+                      "lit": "PublicKeys"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.credentials`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /v1/Credentials/PublicKeys/{Sid}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "Sid",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/v1/Credentials/PublicKeys/{Sid}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "Sid": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "Credentials"
+                    },
+                    {
+                      "lit": "PublicKeys"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "accounts_v1_safelist": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {},
+          "name": "accounts_v1_safelist",
+          "op": {
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /v1/SafeList/Numbers",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "+18001234567",
+                        "k": "query",
+                        "n": "phone_number",
+                        "or": "PhoneNumber",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/v1/SafeList/Numbers",
+                  "q": {
+                    "exist": [
+                      "phone_number"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "SafeList"
+                    },
+                    {
+                      "lit": "Numbers"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "accounts_v1_secondary_auth_token": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {},
+          "name": "accounts_v1_secondary_auth_token",
+          "op": {
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /v1/AuthTokens/Secondary",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "suppress_email_notification",
+                        "or": "SuppressEmailNotification",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/v1/AuthTokens/Secondary",
+                  "q": {
+                    "exist": [
+                      "suppress_email_notification"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "AuthTokens"
+                    },
+                    {
+                      "lit": "Secondary"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "auth_token_promotion": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "account_sid": {
+              "a": true,
+              "h": "Account Sid",
+              "n": "account_sid",
+              "r": false,
+              "sh": "The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the secondary Auth Token was created for.",
+              "t": "`$STRING`"
+            },
+            "auth_token": {
+              "a": true,
+              "h": "Auth Token",
+              "n": "auth_token",
+              "r": false,
+              "sh": "The promoted Auth Token that must be used to authenticate future API requests.",
+              "t": "`$STRING`"
+            },
+            "date_created": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Date Created",
+              "n": "date_created",
+              "r": false,
+              "sh": "The date and time in UTC when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.",
+              "t": "`$STRING`"
+            },
+            "date_updated": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Date Updated",
+              "n": "date_updated",
+              "r": false,
+              "sh": "The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.",
+              "t": "`$STRING`"
+            },
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "sh": "The URI for this resource, relative to `https://accounts.twilio.com`",
+              "t": "`$STRING`"
+            }
+          },
+          "name": "auth_token_promotion",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /v1/AuthTokens/Promote",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/v1/AuthTokens/Promote",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "AuthTokens"
+                    },
+                    {
+                      "lit": "Promote"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "bulk": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "items": {
+              "a": true,
+              "h": "Items",
+              "n": "items",
+              "r": false,
+              "t": "`$ARRAY`"
+            }
+          },
+          "name": "bulk",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /v1/Consents/Bulk",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/v1/Consents/Bulk",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "Consents"
+                    },
+                    {
+                      "lit": "Bulk"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /v1/Contacts/Bulk",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/v1/Contacts/Bulk",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "Contacts"
+                    },
+                    {
+                      "lit": "Bulk"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "credential_aw": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "account_sid": {
+              "a": true,
+              "h": "Account Sid",
+              "n": "account_sid",
+              "r": false,
+              "sh": "The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the AWS resource.",
+              "t": "`$STRING`"
+            },
+            "date_created": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Date Created",
+              "n": "date_created",
+              "r": false,
+              "sh": "The date and time in GMT when the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.",
+              "t": "`$STRING`"
+            },
+            "date_updated": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Date Updated",
+              "n": "date_updated",
+              "r": false,
+              "sh": "The date and time in GMT when the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.",
+              "t": "`$STRING`"
+            },
+            "friendly_name": {
+              "a": true,
+              "h": "Friendly Name",
+              "n": "friendly_name",
+              "r": false,
+              "sh": "The string that you assigned to describe the resource.",
+              "t": "`$STRING`"
+            },
+            "sid": {
+              "a": true,
+              "h": "Sid",
+              "n": "sid",
+              "r": false,
+              "sh": "The unique string that we created to identify the AWS resource.",
+              "t": "`$STRING`"
+            },
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "sh": "The URI for this resource, relative to `https://accounts.twilio.com`",
+              "t": "`$STRING`"
+            }
+          },
+          "name": "credential_aw",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /v1/Credentials/AWS/{Sid}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "sid",
+                        "or": "Sid",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/v1/Credentials/AWS/{Sid}",
+                  "q": {
+                    "exist": [
+                      "sid"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "Sid": "sid"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "Credentials"
+                    },
+                    {
+                      "lit": "AWS"
+                    },
+                    {
+                      "var": "sid"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/Credentials/AWS/{Sid}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "sid",
+                        "or": "Sid",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/Credentials/AWS/{Sid}",
+                  "q": {
+                    "exist": [
+                      "sid"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "Sid": "sid"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "Credentials"
+                    },
+                    {
+                      "lit": "AWS"
+                    },
+                    {
+                      "var": "sid"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "credential_public_key": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "account_sid": {
+              "a": true,
+              "h": "Account Sid",
+              "n": "account_sid",
+              "r": false,
+              "sh": "The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Credential that the PublicKey resource belongs to.",
+              "t": "`$STRING`"
+            },
+            "date_created": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Date Created",
+              "n": "date_created",
+              "r": false,
+              "sh": "The date and time in GMT when the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.",
+              "t": "`$STRING`"
+            },
+            "date_updated": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Date Updated",
+              "n": "date_updated",
+              "r": false,
+              "sh": "The date and time in GMT when the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.",
+              "t": "`$STRING`"
+            },
+            "friendly_name": {
+              "a": true,
+              "h": "Friendly Name",
+              "n": "friendly_name",
+              "r": false,
+              "sh": "The string that you assigned to describe the resource.",
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "sid": {
+              "a": true,
+              "h": "Sid",
+              "n": "sid",
+              "r": false,
+              "sh": "The unique string that that we created to identify the PublicKey resource.",
+              "t": "`$STRING`"
+            },
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "sh": "The URI for this resource, relative to `https://accounts.twilio.com`",
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "credential_public_key",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /v1/Credentials/PublicKeys/{Sid}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "Sid",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/v1/Credentials/PublicKeys/{Sid}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "Sid": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "Credentials"
+                    },
+                    {
+                      "lit": "PublicKeys"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/Credentials/PublicKeys/{Sid}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "Sid",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/Credentials/PublicKeys/{Sid}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "Sid": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "Credentials"
+                    },
+                    {
+                      "lit": "PublicKeys"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "messaging_geopermission": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "permissions": {
+              "a": true,
+              "h": "Permissions",
+              "n": "permissions",
+              "r": false,
+              "sh": "A list of objects where each object represents the result of processing a messaging Geo Permission.",
+              "t": "`$ANY`"
+            }
+          },
+          "name": "messaging_geopermission",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/Messaging/GeoPermissions",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "IN,PK,US",
+                        "k": "query",
+                        "n": "country_code",
+                        "or": "CountryCode",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/Messaging/GeoPermissions",
+                  "q": {
+                    "exist": [
+                      "country_code"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "Messaging"
+                    },
+                    {
+                      "lit": "GeoPermissions"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PATCH /v1/Messaging/GeoPermissions",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "PATCH",
+                  "o": "/v1/Messaging/GeoPermissions",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "Messaging"
+                    },
+                    {
+                      "lit": "GeoPermissions"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "safelist": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "phone_number": {
+              "a": true,
+              "h": "Phone Number",
+              "n": "phone_number",
+              "r": false,
+              "sh": "The phone number or phone number 1k prefix in SafeList.",
+              "t": "`$STRING`"
+            },
+            "sid": {
+              "a": true,
+              "h": "Sid",
+              "n": "sid",
+              "r": false,
+              "sh": "The unique string that we created to identify the SafeList resource.",
+              "t": "`$STRING`"
+            }
+          },
+          "name": "safelist",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /v1/SafeList/Numbers",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/v1/SafeList/Numbers",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "SafeList"
+                    },
+                    {
+                      "lit": "Numbers"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/SafeList/Numbers",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "+18001234567",
+                        "k": "query",
+                        "n": "phone_number",
+                        "or": "PhoneNumber",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/SafeList/Numbers",
+                  "q": {
+                    "exist": [
+                      "phone_number"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "SafeList"
+                    },
+                    {
+                      "lit": "Numbers"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "secondary": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "account_sid": {
+              "a": true,
+              "h": "Account Sid",
+              "n": "account_sid",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "date_created": {
+              "a": true,
+              "h": "Date Created",
+              "n": "date_created",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "date_updated": {
+              "a": true,
+              "h": "Date Updated",
+              "n": "date_updated",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "secondary_auth_token": {
+              "a": true,
+              "h": "Secondary Auth Token",
+              "n": "secondary_auth_token",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "url": {
+              "a": true,
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "t": "`$STRING`"
+            }
+          },
+          "name": "secondary",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /v1/AuthTokens/Secondary",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/v1/AuthTokens/Secondary",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "AuthTokens"
+                    },
+                    {
+                      "lit": "Secondary"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        }
+      },
+      "feature": {
+        "test": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
+          },
+          "description": "In-memory mock transport for testing without a live server",
+          "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
+              "await": false
+            }
+          },
+          "name": "test",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Test transport",
+          "transport": "base",
+          "version": "0.0.1"
+        }
+      },
+      "flow": {
+        "BasicAccountsV1AwFlow": {
+          "active": true,
+          "entity": "accounts_v1_aw",
+          "key$": "BasicAccountsV1AwFlow",
+          "kind": "basic",
+          "name": "BasicAccountsV1AwFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "accounts_v1_aw_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "accounts_v1_aw_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "accounts_v1_aw_ref01",
+                "suffix": "_rm0"
+              },
+              "m": {
+                "id": "accounts_v1_aw01"
+              },
+              "o": "remove",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "suffix": "_rt0"
+              },
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemNotExists",
+                  "def": {
+                    "ref": "accounts_v1_aw_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicAccountsV1PublicKeyFlow": {
+          "active": true,
+          "entity": "accounts_v1_public_key",
+          "key$": "BasicAccountsV1PublicKeyFlow",
+          "kind": "basic",
+          "name": "BasicAccountsV1PublicKeyFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "accounts_v1_public_key_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "accounts_v1_public_key_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "accounts_v1_public_key_ref01",
+                "suffix": "_rm0"
+              },
+              "m": {
+                "id": "accounts_v1_public_key01"
+              },
+              "o": "remove",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "suffix": "_rt0"
+              },
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemNotExists",
+                  "def": {
+                    "ref": "accounts_v1_public_key_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicAccountsV1SafelistFlow": {
+          "active": true,
+          "entity": "accounts_v1_safelist",
+          "key$": "BasicAccountsV1SafelistFlow",
+          "kind": "basic",
+          "name": "BasicAccountsV1SafelistFlow",
+          "param": {},
+          "step": []
+        },
+        "BasicAccountsV1SecondaryAuthTokenFlow": {
+          "active": true,
+          "entity": "accounts_v1_secondary_auth_token",
+          "key$": "BasicAccountsV1SecondaryAuthTokenFlow",
+          "kind": "basic",
+          "name": "BasicAccountsV1SecondaryAuthTokenFlow",
+          "param": {},
+          "step": []
+        },
+        "BasicAuthTokenPromotionFlow": {
+          "active": true,
+          "entity": "auth_token_promotion",
+          "key$": "BasicAuthTokenPromotionFlow",
+          "kind": "basic",
+          "name": "BasicAuthTokenPromotionFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "auth_token_promotion_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicBulkFlow": {
+          "active": true,
+          "entity": "bulk",
+          "key$": "BasicBulkFlow",
+          "kind": "basic",
+          "name": "BasicBulkFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "bulk_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicCredentialAwFlow": {
+          "active": true,
+          "entity": "credential_aw",
+          "key$": "BasicCredentialAwFlow",
+          "kind": "basic",
+          "name": "BasicCredentialAwFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "credential_aw_ref01"
+              },
+              "m": {
+                "sid": "sid01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "credential_aw_ref01",
+                "srcdatavar": "credential_aw_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "credential_aw01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-credential_aw_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicCredentialPublicKeyFlow": {
+          "active": true,
+          "entity": "credential_public_key",
+          "key$": "BasicCredentialPublicKeyFlow",
+          "kind": "basic",
+          "name": "BasicCredentialPublicKeyFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "credential_public_key_ref01"
+              },
+              "m": {
+                "sid": "sid01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "credential_public_key_ref01",
+                "srcdatavar": "credential_public_key_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "credential_public_key01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-credential_public_key_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicMessagingGeopermissionFlow": {
+          "active": true,
+          "entity": "messaging_geopermission",
+          "key$": "BasicMessagingGeopermissionFlow",
+          "kind": "basic",
+          "name": "BasicMessagingGeopermissionFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "messaging_geopermission_ref01",
+                "srcdatavar": "messaging_geopermission_ref01_data",
+                "suffix": "_up0"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-messaging_geopermission_ref01"
+                  }
+                }
+              ],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "messaging_geopermission_ref01",
+                "srcdatavar": "messaging_geopermission_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-messaging_geopermission_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicSafelistFlow": {
+          "active": true,
+          "entity": "safelist",
+          "key$": "BasicSafelistFlow",
+          "kind": "basic",
+          "name": "BasicSafelistFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "safelist_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "safelist_ref01",
+                "srcdatavar": "safelist_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-safelist_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicSecondaryFlow": {
+          "active": true,
+          "entity": "secondary",
+          "key$": "BasicSecondaryFlow",
+          "kind": "basic",
+          "name": "BasicSecondaryFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "secondary_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        }
+      },
+      "info": {
+        "contact": {
+          "email": "support@twilio.com",
+          "name": "Twilio Support",
+          "url": "https://support.twilio.com"
+        },
+        "description": "This is the public Twilio REST API.",
+        "license": {
+          "name": "Apache 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "security": {
+          "in": "header",
+          "name": "Authorization",
+          "prefix": "Basic",
+          "scheme": "accountSid_authToken",
+          "type": "http"
+        },
+        "servers": [
+          {
+            "url": "https://accounts.twilio.com"
+          }
+        ],
+        "summary": "This is the public Twilio REST API.",
+        "termsOfService": "https://www.twilio.com/legal/tos",
+        "title": "Twilio - Accounts",
+        "version": "1.0.0",
+        "website": "https://accounts.twilio.com",
+        "x-twilio": {
+          "apiStandards": "v0.1"
+        }
+      },
+      "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "in": "",
+          "name": "",
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
+      "phase": {
+        "build": {
+          "active": true
+        },
+        "top": {
+          "active": true
+        }
+      },
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
+      "target": {
+        "ts": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "twillio",
+            "package": "",
+            "path": ""
+          },
+          "name": "ts",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "npm",
+              "package": "",
+              "state": "pending",
+              "url": "https://registry.npmjs.org",
+              "vault": {
+                "alias": "npm",
+                "env": "",
+                "recipe": "npm"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
+          "title": "TypeScript"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": true
+        }
+      }
+    }
+  },
+  "name": "twillio",
+  "origin": "voxgig-sdk"
+}

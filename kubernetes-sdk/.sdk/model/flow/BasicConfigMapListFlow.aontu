@@ -1,0 +1,22 @@
+# BasicConfigMapListFlow
+
+main: kit: flow: BasicConfigMapListFlow:
+{
+  entity: "config_map_list",
+  kind: "basic",
+  name: "BasicConfigMapListFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "config_map_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicConfigMapListFlow"
+}

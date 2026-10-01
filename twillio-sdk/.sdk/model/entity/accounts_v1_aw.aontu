@@ -1,0 +1,204 @@
+# Entity: accounts_v1_aw
+
+main: kit: entity: accounts_v1_aw: {
+
+  alias: field: {}
+
+  fields: {
+    account_sid: {
+      h: "Account Sid"
+      n: "account_sid"
+      r: false
+      sh: "The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the AWS resource."
+      t: "`$STRING`"
+    }
+    date_created: {
+      fo: "date-time"
+      h: "Date Created"
+      n: "date_created"
+      r: false
+      sh: "The date and time in GMT when the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format."
+      t: "`$STRING`"
+    }
+    date_updated: {
+      fo: "date-time"
+      h: "Date Updated"
+      n: "date_updated"
+      r: false
+      sh: "The date and time in GMT when the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format."
+      t: "`$STRING`"
+    }
+    friendly_name: {
+      h: "Friendly Name"
+      n: "friendly_name"
+      r: false
+      sh: "The string that you assigned to describe the resource."
+      t: "`$STRING`"
+    }
+    sid: {
+      h: "Sid"
+      n: "sid"
+      r: false
+      sh: "The unique string that we created to identify the AWS resource."
+      t: "`$STRING`"
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "The URI for this resource, relative to `https://accounts.twilio.com`"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "accounts_v1_aw"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/Credentials/AWS"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/Credentials/AWS"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "Credentials"
+            }
+            {
+              lit: "AWS"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/Credentials/AWS"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "page"
+                or: "Page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "PageSize"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page_token"
+                or: "PageToken"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/Credentials/AWS"
+          q: {
+            exist: [
+              "page"
+              "page_size"
+              "page_token"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "Credentials"
+            }
+            {
+              lit: "AWS"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.credentials`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /v1/Credentials/AWS/{Sid}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "sid"
+                or: "Sid"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/v1/Credentials/AWS/{Sid}"
+          q: {
+            exist: [
+              "sid"
+            ]
+          }
+          r: {
+            param: {
+              Sid: "sid"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "Credentials"
+            }
+            {
+              lit: "AWS"
+            }
+            {
+              var: "sid"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

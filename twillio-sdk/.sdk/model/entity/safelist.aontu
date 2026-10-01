@@ -1,0 +1,105 @@
+# Entity: safelist
+
+main: kit: entity: safelist: {
+
+  alias: field: {}
+
+  fields: {
+    phone_number: {
+      h: "Phone Number"
+      n: "phone_number"
+      r: false
+      sh: "The phone number or phone number 1k prefix in SafeList."
+      t: "`$STRING`"
+    }
+    sid: {
+      h: "Sid"
+      n: "sid"
+      r: false
+      sh: "The unique string that we created to identify the SafeList resource."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "safelist"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/SafeList/Numbers"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/SafeList/Numbers"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "SafeList"
+            }
+            {
+              lit: "Numbers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/SafeList/Numbers"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "+18001234567"
+                k: "query"
+                n: "phone_number"
+                or: "PhoneNumber"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/SafeList/Numbers"
+          q: {
+            exist: [
+              "phone_number"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "SafeList"
+            }
+            {
+              lit: "Numbers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "configmap": {
+      "CONFIGMAP00": {
+        "id": "CONFIGMAP00",
+        "object": "s1f",
+        "type": "s20",
+        "namespace_id": "NAMESPACE01"
+      },
+      "CONFIGMAP01": {
+        "id": "CONFIGMAP01",
+        "object": "s3d",
+        "type": "s3e",
+        "namespace_id": "NAMESPACE01"
+      },
+      "CONFIGMAP02": {
+        "id": "CONFIGMAP02",
+        "object": "s5b",
+        "type": "s5c",
+        "namespace_id": "NAMESPACE01"
+      }
+    }
+  },
+  "new": {
+    "configmap": {
+      "configmap_ref01": {
+        "object": "s79",
+        "type": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/watch/namespaces/{namespace}/configmaps/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/namespaces/{namespace}/configmaps": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/configmaps": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

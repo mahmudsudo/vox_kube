@@ -1,0 +1,71 @@
+# BasicNamespaceFlow
+
+main: kit: flow: BasicNamespaceFlow:
+{
+  entity: "namespace",
+  kind: "basic",
+  name: "BasicNamespaceFlow",
+  step: [
+    {
+      i: {
+        ref: "namespace_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "namespace_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "namespace_ref01",
+        srcdatavar: "namespace_ref01_data",
+        suffix: "_up0",
+        textfield: "apiVersion"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-namespace_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "namespace_ref01",
+        srcdatavar: "namespace_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "namespace01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-namespace_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicNamespaceFlow"
+}

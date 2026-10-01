@@ -1,0 +1,112 @@
+# Entity: api_resource_list
+
+main: kit: entity: api_resource_list: {
+
+  alias: field: {}
+
+  fields: {
+    categories: {
+      h: "Categories"
+      n: "categories"
+      r: false
+      sh: "categories is a list of the grouped resources this resource belongs to (e.g."
+      t: "`$ARRAY`"
+    }
+    group: {
+      h: "Group"
+      n: "group"
+      r: false
+      sh: "group is the preferred group of the resource."
+      t: "`$STRING`"
+    }
+    kind: {
+      h: "Kind"
+      n: "kind"
+      r: true
+      sh: "kind is the kind for the resource (e.g."
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "name is the plural name of the resource."
+      t: "`$STRING`"
+    }
+    namespaced: {
+      h: "Namespaced"
+      n: "namespaced"
+      r: true
+      sh: "namespaced indicates if a resource is namespaced or not."
+      t: "`$BOOLEAN`"
+    }
+    shortNames: {
+      h: "Short Names"
+      n: "shortNames"
+      r: false
+      sh: "shortNames is a list of suggested short names of the resource."
+      t: "`$ARRAY`"
+    }
+    singularName: {
+      h: "Singular Name"
+      n: "singularName"
+      r: true
+      sh: "singularName is the singular name of the resource."
+      t: "`$STRING`"
+    }
+    storageVersionHash: {
+      h: "Storage Version Hash"
+      n: "storageVersionHash"
+      r: false
+      sh: "The hash value of the storage version, the version this resource is converted to when written to the data store."
+      t: "`$STRING`"
+    }
+    verbs: {
+      h: "Verbs"
+      n: "verbs"
+      r: true
+      sh: "verbs is a list of supported kube verbs (this includes get, list, watch, create, update, patch, delete, deletecollection, and proxy)"
+      t: "`$ARRAY`"
+    }
+    version: {
+      h: "Version"
+      n: "version"
+      r: false
+      sh: "version is the preferred version of the resource."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "api_resource_list"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/v1/"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/api/v1/"
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.resources`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

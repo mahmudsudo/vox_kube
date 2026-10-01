@@ -1,0 +1,158 @@
+# Entity: token
+
+main: kit: entity: token: {
+
+  alias: field: {}
+
+  fields: {
+    apiVersion: {
+      h: "Api Version"
+      n: "apiVersion"
+      r: false
+      sh: "APIVersion defines the versioned schema of this representation of an object."
+      t: "`$STRING`"
+    }
+    kind: {
+      h: "Kind"
+      n: "kind"
+      r: false
+      sh: "Kind is a string value representing the REST resource this object represents."
+      t: "`$STRING`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "metadata is the standard object's metadata."
+      t: "`$ANY`"
+    }
+    spec: {
+      h: "Spec"
+      n: "spec"
+      r: false
+      sh: "spec holds information about the request being evaluated"
+      t: "`$ANY`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "status is filled in by the server and indicates whether the token can be authenticated."
+      t: "`$ANY`"
+    }
+  }
+
+  name: "token"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /api/v1/namespaces/{namespace}/serviceaccounts/{name}/token"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/namespaces/{namespace}/serviceaccounts/{name}/token"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "serviceaccounts"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "token"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.namespace") path("$.main.kit.entity.serviceaccount")]
+  ]
+
+}

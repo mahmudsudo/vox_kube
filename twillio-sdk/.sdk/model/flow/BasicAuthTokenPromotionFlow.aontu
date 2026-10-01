@@ -1,0 +1,18 @@
+# BasicAuthTokenPromotionFlow
+
+main: kit: flow: BasicAuthTokenPromotionFlow:
+{
+  entity: "auth_token_promotion",
+  kind: "basic",
+  name: "BasicAuthTokenPromotionFlow",
+  step: [
+    {
+      i: {
+        ref: "auth_token_promotion_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicAuthTokenPromotionFlow"
+}

@@ -1,0 +1,22 @@
+# BasicResourceQuotaListFlow
+
+main: kit: flow: BasicResourceQuotaListFlow:
+{
+  entity: "resource_quota_list",
+  kind: "basic",
+  name: "BasicResourceQuotaListFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "resource_quota_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicResourceQuotaListFlow"
+}

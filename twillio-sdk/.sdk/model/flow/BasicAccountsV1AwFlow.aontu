@@ -1,0 +1,59 @@
+# BasicAccountsV1AwFlow
+
+main: kit: flow: BasicAccountsV1AwFlow:
+{
+  entity: "accounts_v1_aw",
+  kind: "basic",
+  name: "BasicAccountsV1AwFlow",
+  step: [
+    {
+      i: {
+        ref: "accounts_v1_aw_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "accounts_v1_aw_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "accounts_v1_aw_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        id: "accounts_v1_aw01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "accounts_v1_aw_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAccountsV1AwFlow"
+}

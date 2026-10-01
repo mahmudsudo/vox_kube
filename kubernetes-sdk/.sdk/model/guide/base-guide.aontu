@@ -1,0 +1,853 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 37
+  metrics: count: path: 113
+  metrics: count: method: 248
+
+  entity: api_resource_list: {
+    path: "/api/v1/": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.resources`")|top
+    }
+  }
+
+  entity: binding: {
+    path: "/api/v1/namespaces/{namespace}/bindings": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+    }
+    path: "/api/v1/namespaces/{namespace}/pods/{name}/binding": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: component_status: {
+    path: "/api/v1/componentstatuses": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/componentstatuses/{name}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: config_map: {
+    path: "/api/v1/namespaces/{namespace}/configmaps": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+    }
+    path: "/api/v1/namespaces/{namespace}/configmaps/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+  }
+
+  entity: config_map_list: {
+    path: "/api/v1/configmaps": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/namespaces/{namespace}/configmaps": {
+      rename: param: "namespace": *"namespace_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+  }
+
+  entity: configmap: {
+    path: "/api/v1/watch/configmaps": {
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/configmaps": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/configmaps/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: core_v1: {
+    path: "/api/v1/namespaces/{namespace}/persistentvolumeclaims": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+    }
+    path: "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/namespaces/{namespace}/pods/{name}/attach": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/namespaces/{namespace}/pods/{name}/exec": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/namespaces/{namespace}/pods/{name}/log": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/namespaces/{namespace}/pods/{name}/portforward": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/namespaces/{namespace}/pods/{name}/proxy": {
+      rename: param: "namespace": *"namespace_id"
+      op: OPTIONS: method: *OPTIONS
+      op: create: method: *POST
+      op: head: method: *HEAD
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}": {
+      rename: param: "name": *"pod_id"
+      rename: param: "namespace": *"namespace_id"
+      op: OPTIONS: method: *OPTIONS
+      op: create: method: *POST
+      op: head: method: *HEAD
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/api/v1/namespaces/{namespace}/podtemplates": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+    }
+    path: "/api/v1/namespaces/{namespace}/podtemplates/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/namespaces/{namespace}/replicationcontrollers": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+    }
+    path: "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/namespaces/{namespace}/resourcequotas": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+    }
+    path: "/api/v1/namespaces/{namespace}/resourcequotas/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/namespaces/{namespace}/serviceaccounts": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+    }
+    path: "/api/v1/namespaces/{namespace}/serviceaccounts/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/namespaces/{namespace}/services/{name}/proxy": {
+      rename: param: "namespace": *"namespace_id"
+      op: OPTIONS: method: *OPTIONS
+      op: create: method: *POST
+      op: head: method: *HEAD
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}": {
+      rename: param: "name": *"service_id"
+      rename: param: "namespace": *"namespace_id"
+      op: OPTIONS: method: *OPTIONS
+      op: create: method: *POST
+      op: head: method: *HEAD
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/api/v1/nodes/{name}/proxy": {
+      op: OPTIONS: method: *OPTIONS
+      op: create: method: *POST
+      op: head: method: *HEAD
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/api/v1/nodes/{name}/proxy/{path}": {
+      rename: param: "name": *"node_id"
+      op: OPTIONS: method: *OPTIONS
+      op: create: method: *POST
+      op: head: method: *HEAD
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/api/v1/persistentvolumes": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/persistentvolumes/{name}": {
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+  }
+
+  entity: endpoint: {
+    path: "/api/v1/endpoints": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/namespaces/{namespace}/endpoints": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/namespaces/{namespace}/endpoints/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/watch/endpoints": {
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/endpoints": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/endpoints/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: event: {
+    path: "/api/v1/events": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/namespaces/{namespace}/events": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/namespaces/{namespace}/events/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/watch/events": {
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/events": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/events/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: eviction: {
+    path: "/api/v1/namespaces/{namespace}/pods/{name}/eviction": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: limit_range: {
+    path: "/api/v1/namespaces/{namespace}/limitranges": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+    }
+    path: "/api/v1/namespaces/{namespace}/limitranges/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+  }
+
+  entity: limit_range_list: {
+    path: "/api/v1/limitranges": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/namespaces/{namespace}/limitranges": {
+      rename: param: "namespace": *"namespace_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+  }
+
+  entity: limitrange: {
+    path: "/api/v1/watch/limitranges": {
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/limitranges": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/limitranges/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: namespace: {
+    path: "/api/v1/namespaces": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/namespaces/{name}": {
+      rename: param: "name": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/namespaces/{name}/finalize": {
+      action: "finalize": {}
+      op: update: method: *PUT
+    }
+    path: "/api/v1/namespaces/{name}/status": {
+      action: "status": {}
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/watch/namespaces": {
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{name}": {
+      rename: param: "name": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: node: {
+    path: "/api/v1/nodes": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/nodes/{name}": {
+      rename: param: "name": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/nodes/{name}/status": {
+      action: "status": {}
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/watch/nodes": {
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/nodes/{name}": {
+      rename: param: "name": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: persistent_volume: {
+    path: "/api/v1/persistentvolumes/{name}": {
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/persistentvolumes/{name}/status": {
+      action: "status": {}
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+  }
+
+  entity: persistent_volume_claim: {
+    path: "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status": {
+      action: "status": {}
+      rename: param: "namespace": *"namespace_id"
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+  }
+
+  entity: persistent_volume_claim_list: {
+    path: "/api/v1/namespaces/{namespace}/persistentvolumeclaims": {
+      rename: param: "namespace": *"namespace_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/persistentvolumeclaims": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+  }
+
+  entity: persistentvolume: {
+    path: "/api/v1/watch/persistentvolumes": {
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/persistentvolumes/{name}": {
+      rename: param: "name": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: persistentvolumeclaim: {
+    path: "/api/v1/watch/namespaces/{namespace}/persistentvolumeclaims": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/persistentvolumeclaims/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/persistentvolumeclaims": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: pod: {
+    path: "/api/v1/namespaces/{namespace}/pods": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/namespaces/{namespace}/pods/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/api/v1/namespaces/{namespace}/pods/{name}/attach": {
+      action: "attach": {}
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+    }
+    path: "/api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers": {
+      action: "ephemeralcontainer": {}
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/namespaces/{namespace}/pods/{name}/exec": {
+      action: "exec": {}
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+    }
+    path: "/api/v1/namespaces/{namespace}/pods/{name}/portforward": {
+      action: "portforward": {}
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+    }
+    path: "/api/v1/namespaces/{namespace}/pods/{name}/resize": {
+      action: "resize": {}
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/namespaces/{namespace}/pods/{name}/status": {
+      action: "status": {}
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/pods": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/pods": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/pods/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/pods": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: pod_template: {
+    path: "/api/v1/namespaces/{namespace}/podtemplates/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: pod_template_list: {
+    path: "/api/v1/namespaces/{namespace}/podtemplates": {
+      rename: param: "namespace": *"namespace_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/podtemplates": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+  }
+
+  entity: podtemplate: {
+    path: "/api/v1/watch/namespaces/{namespace}/podtemplates": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/podtemplates/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/podtemplates": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: replication_controller_list: {
+    path: "/api/v1/namespaces/{namespace}/replicationcontrollers": {
+      rename: param: "namespace": *"namespace_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/replicationcontrollers": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+  }
+
+  entity: replicationcontroller: {
+    path: "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status": {
+      action: "status": {}
+      rename: param: "namespace": *"namespace_id"
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/replicationcontrollers": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/replicationcontrollers/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/replicationcontrollers": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: resource_quota: {
+    path: "/api/v1/namespaces/{namespace}/resourcequotas/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/resourcequotas/{name}/status": {
+      action: "status": {}
+      rename: param: "namespace": *"namespace_id"
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+  }
+
+  entity: resource_quota_list: {
+    path: "/api/v1/namespaces/{namespace}/resourcequotas": {
+      rename: param: "namespace": *"namespace_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/resourcequotas": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+  }
+
+  entity: resourcequota: {
+    path: "/api/v1/watch/namespaces/{namespace}/resourcequotas": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/resourcequotas/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/resourcequotas": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: scale: {
+    path: "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+  }
+
+  entity: secret: {
+    path: "/api/v1/namespaces/{namespace}/secrets": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/namespaces/{namespace}/secrets/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/secrets": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/secrets": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/secrets/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/secrets": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: service: {
+    path: "/api/v1/namespaces/{namespace}/services": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/namespaces/{namespace}/services/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/api/v1/namespaces/{namespace}/services/{name}/status": {
+      action: "status": {}
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/api/v1/services": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/services": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/services/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/services": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: service_account: {
+    path: "/api/v1/namespaces/{namespace}/serviceaccounts/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: service_account_list: {
+    path: "/api/v1/namespaces/{namespace}/serviceaccounts": {
+      rename: param: "namespace": *"namespace_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/api/v1/serviceaccounts": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+  }
+
+  entity: serviceaccount: {
+    path: "/api/v1/watch/namespaces/{namespace}/serviceaccounts": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/namespaces/{namespace}/serviceaccounts/{name}": {
+      rename: param: "name": *"id"
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+    }
+    path: "/api/v1/watch/serviceaccounts": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: status: {
+    path: "/api/v1/namespaces/{namespace}/configmaps": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/configmaps/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/endpoints": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/endpoints/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/events": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/events/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/limitranges": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/limitranges/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/persistentvolumeclaims": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.status`")|top
+    }
+    path: "/api/v1/namespaces/{namespace}/pods": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/podtemplates": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/replicationcontrollers": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.status`")|top
+    }
+    path: "/api/v1/namespaces/{namespace}/resourcequotas": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/resourcequotas/{name}/status": {
+      rename: param: "namespace": *"namespace_id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.status`")|top
+    }
+    path: "/api/v1/namespaces/{namespace}/secrets": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/secrets/{name}": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/serviceaccounts": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{namespace}/services": {
+      rename: param: "namespace": *"namespace_id"
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/namespaces/{name}": {
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/nodes/{name}": {
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/persistentvolumes/{name}/status": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.status`")|top
+    }
+  }
+
+  entity: token: {
+    path: "/api/v1/namespaces/{namespace}/serviceaccounts/{name}/token": {
+      rename: param: "namespace": *"namespace_id"
+      op: create: method: *POST
+    }
+  }
+
+}

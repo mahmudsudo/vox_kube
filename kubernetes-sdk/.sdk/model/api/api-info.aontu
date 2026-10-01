@@ -1,0 +1,30 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      description: "The Kubernetes API."
+      security: {
+        in: "header"
+        name: "authorization"
+        prefix: "Token"
+        scheme: "BearerToken"
+        type: "apiKey"
+      }
+      servers: [
+        {
+          url: "{base}"
+          variables: {
+            base: {
+              description: "The base URL of the API, which its definition does not name."
+            }
+          }
+        }
+      ]
+      title: "Kubernetes"
+      version: "unversioned"
+    }
+  }
+}
+

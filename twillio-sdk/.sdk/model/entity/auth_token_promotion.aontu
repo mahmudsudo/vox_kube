@@ -1,0 +1,83 @@
+# Entity: auth_token_promotion
+
+main: kit: entity: auth_token_promotion: {
+
+  alias: field: {}
+
+  fields: {
+    account_sid: {
+      h: "Account Sid"
+      n: "account_sid"
+      r: false
+      sh: "The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the secondary Auth Token was created for."
+      t: "`$STRING`"
+    }
+    auth_token: {
+      h: "Auth Token"
+      n: "auth_token"
+      r: false
+      sh: "The promoted Auth Token that must be used to authenticate future API requests."
+      t: "`$STRING`"
+    }
+    date_created: {
+      fo: "date-time"
+      h: "Date Created"
+      n: "date_created"
+      r: false
+      sh: "The date and time in UTC when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format."
+      t: "`$STRING`"
+    }
+    date_updated: {
+      fo: "date-time"
+      h: "Date Updated"
+      n: "date_updated"
+      r: false
+      sh: "The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format."
+      t: "`$STRING`"
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "The URI for this resource, relative to `https://accounts.twilio.com`"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "auth_token_promotion"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/AuthTokens/Promote"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/AuthTokens/Promote"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "AuthTokens"
+            }
+            {
+              lit: "Promote"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,109 @@
+{
+  "existing": {
+    "namespace": {
+      "NAMESPACE00": {
+        "apiVersion": "s50",
+        "id": "NAMESPACE00",
+        "kind": "s52",
+        "metadata": "s53",
+        "object": "s54",
+        "spec": "s55",
+        "status": "s56",
+        "type": "s57",
+        "name": "NAME01"
+      },
+      "NAMESPACE01": {
+        "apiVersion": "sa0",
+        "id": "NAMESPACE01",
+        "kind": "sa2",
+        "metadata": "sa3",
+        "object": "sa4",
+        "spec": "sa5",
+        "status": "sa6",
+        "type": "sa7",
+        "name": "NAME01"
+      },
+      "NAMESPACE02": {
+        "apiVersion": "sf0",
+        "id": "NAMESPACE02",
+        "kind": "sf2",
+        "metadata": "sf3",
+        "object": "sf4",
+        "spec": "sf5",
+        "status": "sf6",
+        "type": "sf7",
+        "name": "NAME01"
+      }
+    }
+  },
+  "new": {
+    "namespace": {
+      "namespace_ref01": {
+        "apiVersion": "s140",
+        "kind": "s142",
+        "metadata": "s143",
+        "object": "s144",
+        "spec": "s145",
+        "status": "s146",
+        "type": "s147"
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/namespaces": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/namespaces/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/namespaces": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{name}/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{name}/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{name}/finalize": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{name}/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

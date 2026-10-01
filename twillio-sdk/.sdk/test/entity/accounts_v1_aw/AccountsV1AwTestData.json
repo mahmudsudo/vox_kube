@@ -1,0 +1,62 @@
+{
+  "existing": {
+    "accounts_v1_aw": {
+      "ACCOUNTS_V1_AW00": {
+        "account_sid": "s3c",
+        "date_created": "s3d",
+        "date_updated": "s3e",
+        "friendly_name": "s3f",
+        "sid": "s40",
+        "url": "s41",
+        "id": "ACCOUNTS_V1_AW00"
+      },
+      "ACCOUNTS_V1_AW01": {
+        "account_sid": "s78",
+        "date_created": "s79",
+        "date_updated": "s7a",
+        "friendly_name": "s7b",
+        "sid": "s7c",
+        "url": "s7d",
+        "id": "ACCOUNTS_V1_AW01"
+      },
+      "ACCOUNTS_V1_AW02": {
+        "account_sid": "sb4",
+        "date_created": "sb5",
+        "date_updated": "sb6",
+        "friendly_name": "sb7",
+        "sid": "sb8",
+        "url": "sb9",
+        "id": "ACCOUNTS_V1_AW02"
+      }
+    }
+  },
+  "new": {
+    "accounts_v1_aw": {
+      "accounts_v1_aw_ref01": {
+        "account_sid": "sf0",
+        "date_created": "sf1",
+        "date_updated": "sf2",
+        "friendly_name": "sf3",
+        "sid": "sf4",
+        "url": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/Credentials/AWS": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/Credentials/AWS": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/Credentials/AWS/{Sid}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

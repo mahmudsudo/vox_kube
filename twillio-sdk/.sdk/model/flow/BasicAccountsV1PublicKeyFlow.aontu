@@ -1,0 +1,59 @@
+# BasicAccountsV1PublicKeyFlow
+
+main: kit: flow: BasicAccountsV1PublicKeyFlow:
+{
+  entity: "accounts_v1_public_key",
+  kind: "basic",
+  name: "BasicAccountsV1PublicKeyFlow",
+  step: [
+    {
+      i: {
+        ref: "accounts_v1_public_key_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "accounts_v1_public_key_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "accounts_v1_public_key_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        id: "accounts_v1_public_key01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "accounts_v1_public_key_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAccountsV1PublicKeyFlow"
+}

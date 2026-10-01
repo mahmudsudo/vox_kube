@@ -1,0 +1,98 @@
+# Entity: messaging_geopermission
+
+main: kit: entity: messaging_geopermission: {
+
+  alias: field: {}
+
+  fields: {
+    permissions: {
+      h: "Permissions"
+      n: "permissions"
+      r: false
+      sh: "A list of objects where each object represents the result of processing a messaging Geo Permission."
+      t: "`$ANY`"
+    }
+  }
+
+  name: "messaging_geopermission"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/Messaging/GeoPermissions"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "IN,PK,US"
+                k: "query"
+                n: "country_code"
+                or: "CountryCode"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/Messaging/GeoPermissions"
+          q: {
+            exist: [
+              "country_code"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "Messaging"
+            }
+            {
+              lit: "GeoPermissions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /v1/Messaging/GeoPermissions"
+            source: "openapi3"
+            version: 2
+          }
+          m: "PATCH"
+          o: "/v1/Messaging/GeoPermissions"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "Messaging"
+            }
+            {
+              lit: "GeoPermissions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

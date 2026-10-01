@@ -1,0 +1,430 @@
+# Entity: limit_range
+
+main: kit: entity: limit_range: {
+
+  alias: field: {}
+
+  fields: {
+    apiVersion: {
+      h: "Api Version"
+      n: "apiVersion"
+      r: false
+      sh: "APIVersion defines the versioned schema of this representation of an object."
+      t: "`$STRING`"
+    }
+    kind: {
+      h: "Kind"
+      n: "kind"
+      r: false
+      sh: "Kind is a string value representing the REST resource this object represents."
+      t: "`$STRING`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "metadata is the standard object's metadata."
+      t: "`$ANY`"
+    }
+    spec: {
+      h: "Spec"
+      n: "spec"
+      r: false
+      sh: "spec defines the limits enforced."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 5
+        depth: 8
+      }
+    }
+  }
+
+  name: "limit_range"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /api/v1/namespaces/{namespace}/limitranges"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/namespaces/{namespace}/limitranges"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "limitranges"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/v1/namespaces/{namespace}/limitranges/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/namespaces/{namespace}/limitranges/{name}"
+          q: {
+            exist: [
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "limitranges"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    patch: {
+      name: "patch"
+      points: [
+        {
+          co: {
+            id: "PATCH /api/v1/namespaces/{namespace}/limitranges/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "force"
+                or: "force"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/namespaces/{namespace}/limitranges/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "force"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "limitranges"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /api/v1/namespaces/{namespace}/limitranges/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/namespaces/{namespace}/limitranges/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "limitranges"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.namespace")]
+    [path("$.main.kit.entity.namespace") path("$.main.kit.entity.limitrange")]
+  ]
+
+}

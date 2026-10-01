@@ -1,0 +1,50 @@
+{
+  "existing": {
+    "eviction": {
+      "EVICTION00": {
+        "apiVersion": "s28",
+        "deleteOptions": "s29",
+        "kind": "s2a",
+        "metadata": "s2b",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "EVICTION00"
+      },
+      "EVICTION01": {
+        "apiVersion": "s50",
+        "deleteOptions": "s51",
+        "kind": "s52",
+        "metadata": "s53",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "EVICTION01"
+      },
+      "EVICTION02": {
+        "apiVersion": "s78",
+        "deleteOptions": "s79",
+        "kind": "s7a",
+        "metadata": "s7b",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "EVICTION02"
+      }
+    }
+  },
+  "new": {
+    "eviction": {
+      "eviction_ref01": {
+        "apiVersion": "sa0",
+        "deleteOptions": "sa1",
+        "kind": "sa2",
+        "metadata": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/namespaces/{namespace}/pods/{name}/eviction": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

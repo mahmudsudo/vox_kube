@@ -1,0 +1,95 @@
+{
+  "existing": {
+    "endpoint": {
+      "ENDPOINT00": {
+        "apiVersion": "s46",
+        "id": "ENDPOINT00",
+        "kind": "s48",
+        "metadata": "s49",
+        "object": "s4a",
+        "subsets": [],
+        "type": "s4c",
+        "namespace_id": "NAMESPACE01"
+      },
+      "ENDPOINT01": {
+        "apiVersion": "s8c",
+        "id": "ENDPOINT01",
+        "kind": "s8e",
+        "metadata": "s8f",
+        "object": "s90",
+        "subsets": [],
+        "type": "s92",
+        "namespace_id": "NAMESPACE01"
+      },
+      "ENDPOINT02": {
+        "apiVersion": "sd2",
+        "id": "ENDPOINT02",
+        "kind": "sd4",
+        "metadata": "sd5",
+        "object": "sd6",
+        "subsets": [],
+        "type": "sd8",
+        "namespace_id": "NAMESPACE01"
+      }
+    }
+  },
+  "new": {
+    "endpoint": {
+      "endpoint_ref01": {
+        "apiVersion": "s118",
+        "kind": "s11a",
+        "metadata": "s11b",
+        "object": "s11c",
+        "subsets": [],
+        "type": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/namespaces/{namespace}/endpoints": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/endpoints": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/endpoints": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/namespaces/{namespace}/endpoints/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/namespaces/{namespace}/endpoints": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/endpoints": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/endpoints/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/endpoints/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/endpoints/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

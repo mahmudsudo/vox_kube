@@ -1,0 +1,73 @@
+{
+  "existing": {
+    "config_map": {
+      "CONFIG_MAP00": {
+        "apiVersion": "s3c",
+        "binaryData": {},
+        "data": {},
+        "immutable": false,
+        "kind": "s40",
+        "metadata": "s41",
+        "namespace_id": "NAMESPACE01",
+        "name": "NAME01",
+        "id": "CONFIG_MAP00"
+      },
+      "CONFIG_MAP01": {
+        "apiVersion": "s78",
+        "binaryData": {},
+        "data": {},
+        "immutable": false,
+        "kind": "s7c",
+        "metadata": "s7d",
+        "namespace_id": "NAMESPACE01",
+        "name": "NAME01",
+        "id": "CONFIG_MAP01"
+      },
+      "CONFIG_MAP02": {
+        "apiVersion": "sb4",
+        "binaryData": {},
+        "data": {},
+        "immutable": false,
+        "kind": "sb8",
+        "metadata": "sb9",
+        "namespace_id": "NAMESPACE01",
+        "name": "NAME01",
+        "id": "CONFIG_MAP02"
+      }
+    }
+  },
+  "new": {
+    "config_map": {
+      "config_map_ref01": {
+        "apiVersion": "sf0",
+        "binaryData": {},
+        "data": {},
+        "immutable": false,
+        "kind": "sf4",
+        "metadata": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/namespaces/{namespace}/configmaps": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/configmaps/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/configmaps/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/configmaps/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

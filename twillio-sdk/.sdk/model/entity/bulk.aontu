@@ -1,0 +1,75 @@
+# Entity: bulk
+
+main: kit: entity: bulk: {
+
+  alias: field: {}
+
+  fields: {
+    items: {
+      h: "Items"
+      n: "items"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "bulk"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/Consents/Bulk"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/Consents/Bulk"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "Consents"
+            }
+            {
+              lit: "Bulk"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/Contacts/Bulk"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/Contacts/Bulk"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "Contacts"
+            }
+            {
+              lit: "Bulk"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

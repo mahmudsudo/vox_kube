@@ -1,0 +1,22 @@
+# BasicApiResourceListFlow
+
+main: kit: flow: BasicApiResourceListFlow:
+{
+  entity: "api_resource_list",
+  kind: "basic",
+  name: "BasicApiResourceListFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "api_resource_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicApiResourceListFlow"
+}

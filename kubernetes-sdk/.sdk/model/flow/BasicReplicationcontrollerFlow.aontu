@@ -1,0 +1,56 @@
+# BasicReplicationcontrollerFlow
+
+main: kit: flow: BasicReplicationcontrollerFlow:
+{
+  entity: "replicationcontroller",
+  kind: "basic",
+  name: "BasicReplicationcontrollerFlow",
+  step: [
+    {
+      d: {
+        namespace_id: "namespace01"
+      }
+
+      i: {
+        ref: "replicationcontroller_ref01",
+        srcdatavar: "replicationcontroller_ref01_data",
+        suffix: "_up0",
+        textfield: "apiVersion"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-replicationcontroller_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "replicationcontroller_ref01",
+        srcdatavar: "replicationcontroller_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "replicationcontroller01",
+        namespace_id: "namespace01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-replicationcontroller_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicReplicationcontrollerFlow"
+}

@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "auth_token_promotion": {
+      "AUTH_TOKEN_PROMOTION00": {
+        "account_sid": "s32",
+        "auth_token": "s33",
+        "date_created": "s34",
+        "date_updated": "s35",
+        "url": "s36",
+        "id": "AUTH_TOKEN_PROMOTION00"
+      },
+      "AUTH_TOKEN_PROMOTION01": {
+        "account_sid": "s64",
+        "auth_token": "s65",
+        "date_created": "s66",
+        "date_updated": "s67",
+        "url": "s68",
+        "id": "AUTH_TOKEN_PROMOTION01"
+      },
+      "AUTH_TOKEN_PROMOTION02": {
+        "account_sid": "s96",
+        "auth_token": "s97",
+        "date_created": "s98",
+        "date_updated": "s99",
+        "url": "s9a",
+        "id": "AUTH_TOKEN_PROMOTION02"
+      }
+    }
+  },
+  "new": {
+    "auth_token_promotion": {
+      "auth_token_promotion_ref01": {
+        "account_sid": "sc8",
+        "auth_token": "sc9",
+        "date_created": "sca",
+        "date_updated": "scb",
+        "url": "scc"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/AuthTokens/Promote": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

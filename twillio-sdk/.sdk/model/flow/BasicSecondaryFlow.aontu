@@ -1,0 +1,18 @@
+# BasicSecondaryFlow
+
+main: kit: flow: BasicSecondaryFlow:
+{
+  entity: "secondary",
+  kind: "basic",
+  name: "BasicSecondaryFlow",
+  step: [
+    {
+      i: {
+        ref: "secondary_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicSecondaryFlow"
+}

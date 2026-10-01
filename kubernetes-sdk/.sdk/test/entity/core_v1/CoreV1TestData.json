@@ -1,0 +1,347 @@
+{
+  "existing": {
+    "core_v1": {
+      "CORE_V100": {
+        "apiVersion": "s5a",
+        "automountServiceAccountToken": false,
+        "imagePullSecrets": [],
+        "kind": "s5d",
+        "metadata": "s5e",
+        "secrets": [],
+        "spec": "s60",
+        "status": "s61",
+        "template": "s62",
+        "namespace_id": "NAMESPACE01",
+        "name": "NAME01",
+        "path": "PATH01",
+        "pod_id": "POD01",
+        "service_id": "SERVICE01",
+        "node_id": "NODE01",
+        "id": "CORE_V100"
+      },
+      "CORE_V101": {
+        "apiVersion": "sb4",
+        "automountServiceAccountToken": false,
+        "imagePullSecrets": [],
+        "kind": "sb7",
+        "metadata": "sb8",
+        "secrets": [],
+        "spec": "sba",
+        "status": "sbb",
+        "template": "sbc",
+        "namespace_id": "NAMESPACE01",
+        "name": "NAME01",
+        "path": "PATH01",
+        "pod_id": "POD01",
+        "service_id": "SERVICE01",
+        "node_id": "NODE01",
+        "id": "CORE_V101"
+      },
+      "CORE_V102": {
+        "apiVersion": "s10e",
+        "automountServiceAccountToken": false,
+        "imagePullSecrets": [],
+        "kind": "s111",
+        "metadata": "s112",
+        "secrets": [],
+        "spec": "s114",
+        "status": "s115",
+        "template": "s116",
+        "namespace_id": "NAMESPACE01",
+        "name": "NAME01",
+        "path": "PATH01",
+        "pod_id": "POD01",
+        "service_id": "SERVICE01",
+        "node_id": "NODE01",
+        "id": "CORE_V102"
+      }
+    }
+  },
+  "new": {
+    "core_v1": {
+      "core_v1_ref01": {
+        "apiVersion": "s168",
+        "automountServiceAccountToken": false,
+        "imagePullSecrets": [],
+        "kind": "s16b",
+        "metadata": "s16c",
+        "secrets": [],
+        "spec": "s16e",
+        "status": "s16f",
+        "template": "s170"
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/namespaces/{namespace}/persistentvolumeclaims": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/namespaces/{namespace}/podtemplates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/namespaces/{namespace}/replicationcontrollers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/namespaces/{namespace}/resourcequotas": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/namespaces/{namespace}/serviceaccounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/persistentvolumes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/namespaces/{namespace}/pods/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/namespaces/{namespace}/services/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/nodes/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/nodes/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/persistentvolumes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/pods/{name}/log": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/pods/{name}/exec": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/pods/{name}/attach": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/pods/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/services/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/pods/{name}/portforward": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/nodes/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/nodes/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/podtemplates/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/resourcequotas/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/serviceaccounts/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/persistentvolumes/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/pods/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/services/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/nodes/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/nodes/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/persistentvolumes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/pods/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/services/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/nodes/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/nodes/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/podtemplates/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/resourcequotas/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/serviceaccounts/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/persistentvolumes/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/pods/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/services/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/nodes/{name}/proxy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/nodes/{name}/proxy/{path}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

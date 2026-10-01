@@ -1,0 +1,22 @@
+# BasicPodTemplateListFlow
+
+main: kit: flow: BasicPodTemplateListFlow:
+{
+  entity: "pod_template_list",
+  kind: "basic",
+  name: "BasicPodTemplateListFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "pod_template_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPodTemplateListFlow"
+}

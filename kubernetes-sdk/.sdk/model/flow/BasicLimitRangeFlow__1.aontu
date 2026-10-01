@@ -1,0 +1,68 @@
+# BasicLimitRangeFlow
+
+main: kit: flow: BasicLimitRangeFlow:
+{
+  entity: "limit_range",
+  kind: "basic",
+  name: "BasicLimitRangeFlow",
+  step: [
+    {
+      i: {
+        ref: "limit_range_ref01"
+      }
+
+      m: {
+        namespace_id: "namespace01"
+      }
+
+      o: "create"
+    }
+
+    {
+      d: {
+        namespace_id: "namespace01"
+      }
+
+      i: {
+        ref: "limit_range_ref01",
+        srcdatavar: "limit_range_ref01_data",
+        suffix: "_up0",
+        textfield: "apiVersion"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-limit_range_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "limit_range_ref01",
+        srcdatavar: "limit_range_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "limit_range01",
+        namespace_id: "namespace01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-limit_range_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLimitRangeFlow"
+}

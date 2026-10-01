@@ -1,0 +1,114 @@
+# BasicCoreV1Flow
+
+main: kit: flow: BasicCoreV1Flow:
+{
+  entity: "core_v1",
+  kind: "basic",
+  name: "BasicCoreV1Flow",
+  step: [
+    {
+      i: {
+        ref: "core_v1_ref01"
+      }
+
+      m: {
+        namespace_id: "namespace01",
+        node_id: "node01",
+        path: "path01",
+        pod_id: "pod01",
+        service_id: "service01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "core_v1_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      d: {
+        node_id: "node01"
+      }
+
+      i: {
+        ref: "core_v1_ref01",
+        srcdatavar: "core_v1_ref01_data",
+        suffix: "_up0",
+        textfield: "apiVersion"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-core_v1_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "core_v1_ref01",
+        srcdatavar: "core_v1_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "core_v101",
+        node_id: "node01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-core_v1_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "core_v1_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        id: "core_v101",
+        node_id: "node01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "core_v1_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCoreV1Flow"
+}

@@ -1,0 +1,96 @@
+# BasicNodeFlow
+
+main: kit: flow: BasicNodeFlow:
+{
+  entity: "node",
+  kind: "basic",
+  name: "BasicNodeFlow",
+  step: [
+    {
+      i: {
+        ref: "node_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "node_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "node_ref01",
+        srcdatavar: "node_ref01_data",
+        suffix: "_up0",
+        textfield: "apiVersion"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-node_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "node_ref01",
+        srcdatavar: "node_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "node01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-node_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "node_ref01",
+        suffix: "_rm0"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "node_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicNodeFlow"
+}

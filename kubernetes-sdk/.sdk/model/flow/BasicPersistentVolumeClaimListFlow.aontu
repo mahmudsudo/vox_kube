@@ -1,0 +1,22 @@
+# BasicPersistentVolumeClaimListFlow
+
+main: kit: flow: BasicPersistentVolumeClaimListFlow:
+{
+  entity: "persistent_volume_claim_list",
+  kind: "basic",
+  name: "BasicPersistentVolumeClaimListFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "persistent_volume_claim_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPersistentVolumeClaimListFlow"
+}

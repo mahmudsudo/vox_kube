@@ -1,0 +1,62 @@
+# Entity: accounts_v1_safelist
+
+main: kit: entity: accounts_v1_safelist: {
+
+  alias: field: {}
+
+  name: "accounts_v1_safelist"
+  op: {
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /v1/SafeList/Numbers"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "+18001234567"
+                k: "query"
+                n: "phone_number"
+                or: "PhoneNumber"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/v1/SafeList/Numbers"
+          q: {
+            exist: [
+              "phone_number"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "SafeList"
+            }
+            {
+              lit: "Numbers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

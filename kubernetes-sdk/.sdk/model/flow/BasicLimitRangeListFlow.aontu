@@ -1,0 +1,22 @@
+# BasicLimitRangeListFlow
+
+main: kit: flow: BasicLimitRangeListFlow:
+{
+  entity: "limit_range_list",
+  kind: "basic",
+  name: "BasicLimitRangeListFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "limit_range_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLimitRangeListFlow"
+}

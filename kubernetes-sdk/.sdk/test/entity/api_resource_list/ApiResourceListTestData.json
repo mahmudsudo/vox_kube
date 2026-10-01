@@ -1,0 +1,65 @@
+{
+  "existing": {
+    "api_resource_list": {
+      "API_RESOURCE_LIST00": {
+        "categories": [],
+        "group": "s65",
+        "kind": "s66",
+        "name": "s67",
+        "namespaced": true,
+        "shortNames": [],
+        "singularName": "s6a",
+        "storageVersionHash": "s6b",
+        "verbs": [],
+        "version": "s6d"
+      },
+      "API_RESOURCE_LIST01": {
+        "categories": [],
+        "group": "sc9",
+        "kind": "sca",
+        "name": "scb",
+        "namespaced": true,
+        "shortNames": [],
+        "singularName": "sce",
+        "storageVersionHash": "scf",
+        "verbs": [],
+        "version": "sd1"
+      },
+      "API_RESOURCE_LIST02": {
+        "categories": [],
+        "group": "s12d",
+        "kind": "s12e",
+        "name": "s12f",
+        "namespaced": true,
+        "shortNames": [],
+        "singularName": "s132",
+        "storageVersionHash": "s133",
+        "verbs": [],
+        "version": "s135"
+      }
+    }
+  },
+  "new": {
+    "api_resource_list": {
+      "api_resource_list_ref01": {
+        "categories": [],
+        "group": "s191",
+        "kind": "s192",
+        "name": "s193",
+        "namespaced": true,
+        "shortNames": [],
+        "singularName": "s196",
+        "storageVersionHash": "s197",
+        "verbs": [],
+        "version": "s199"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

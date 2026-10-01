@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "safelist": {
+      "SAFELIST00": {
+        "phone_number": "s14",
+        "sid": "s15",
+        "id": "SAFELIST00"
+      },
+      "SAFELIST01": {
+        "phone_number": "s28",
+        "sid": "s29",
+        "id": "SAFELIST01"
+      },
+      "SAFELIST02": {
+        "phone_number": "s3c",
+        "sid": "s3d",
+        "id": "SAFELIST02"
+      }
+    }
+  },
+  "new": {
+    "safelist": {
+      "safelist_ref01": {
+        "phone_number": "s50",
+        "sid": "s51"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/SafeList/Numbers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/SafeList/Numbers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

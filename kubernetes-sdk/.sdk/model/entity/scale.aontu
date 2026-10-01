@@ -1,0 +1,350 @@
+# Entity: scale
+
+main: kit: entity: scale: {
+
+  alias: field: {}
+
+  fields: {
+    apiVersion: {
+      h: "Api Version"
+      n: "apiVersion"
+      r: false
+      sh: "APIVersion defines the versioned schema of this representation of an object."
+      t: "`$STRING`"
+    }
+    kind: {
+      h: "Kind"
+      n: "kind"
+      r: false
+      sh: "Kind is a string value representing the REST resource this object represents."
+      t: "`$STRING`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "metadata is the standard object metadata; More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata."
+      t: "`$ANY`"
+    }
+    spec: {
+      h: "Spec"
+      n: "spec"
+      r: false
+      sh: "spec defines the behavior of the scale."
+      t: "`$ANY`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "status is the current status of the scale."
+      t: "`$ANY`"
+    }
+  }
+
+  name: "scale"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale"
+          q: {
+            exist: [
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "replicationcontrollers"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "scale"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    patch: {
+      name: "patch"
+      points: [
+        {
+          co: {
+            id: "PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "force"
+                or: "force"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "force"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "replicationcontrollers"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "scale"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "replicationcontrollers"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "scale"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.namespace") path("$.main.kit.entity.replicationcontroller")]
+  ]
+
+}

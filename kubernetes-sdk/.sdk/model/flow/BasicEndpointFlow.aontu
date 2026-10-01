@@ -1,0 +1,80 @@
+# BasicEndpointFlow
+
+main: kit: flow: BasicEndpointFlow:
+{
+  entity: "endpoint",
+  kind: "basic",
+  name: "BasicEndpointFlow",
+  step: [
+    {
+      i: {
+        ref: "endpoint_ref01"
+      }
+
+      m: {
+        namespace_id: "namespace01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "endpoint_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      d: {
+        namespace_id: "namespace01"
+      }
+
+      i: {
+        ref: "endpoint_ref01",
+        srcdatavar: "endpoint_ref01_data",
+        suffix: "_up0",
+        textfield: "apiVersion"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-endpoint_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "endpoint_ref01",
+        srcdatavar: "endpoint_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "endpoint01",
+        namespace_id: "namespace01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-endpoint_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicEndpointFlow"
+}

@@ -1,0 +1,64 @@
+{
+  "existing": {
+    "scale": {
+      "SCALE00": {
+        "apiVersion": "s32",
+        "kind": "s33",
+        "metadata": "s34",
+        "spec": "s35",
+        "status": "s36",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "SCALE00"
+      },
+      "SCALE01": {
+        "apiVersion": "s64",
+        "kind": "s65",
+        "metadata": "s66",
+        "spec": "s67",
+        "status": "s68",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "SCALE01"
+      },
+      "SCALE02": {
+        "apiVersion": "s96",
+        "kind": "s97",
+        "metadata": "s98",
+        "spec": "s99",
+        "status": "s9a",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "SCALE02"
+      }
+    }
+  },
+  "new": {
+    "scale": {
+      "scale_ref01": {
+        "apiVersion": "sc8",
+        "kind": "sc9",
+        "metadata": "sca",
+        "spec": "scb",
+        "status": "scc"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

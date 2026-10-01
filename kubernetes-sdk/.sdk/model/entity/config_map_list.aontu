@@ -1,0 +1,343 @@
+# Entity: config_map_list
+
+main: kit: entity: config_map_list: {
+
+  alias: field: {}
+
+  fields: {
+    apiVersion: {
+      h: "Api Version"
+      n: "apiVersion"
+      r: false
+      sh: "APIVersion defines the versioned schema of this representation of an object."
+      t: "`$STRING`"
+    }
+    binaryData: {
+      h: "Binary Data"
+      n: "binaryData"
+      r: false
+      sh: "binaryData contains the binary data."
+      t: "`$OBJECT`"
+    }
+    data: {
+      h: "Data"
+      n: "data"
+      r: false
+      sh: "data contains the configuration data."
+      t: "`$OBJECT`"
+    }
+    immutable: {
+      h: "Immutable"
+      n: "immutable"
+      r: false
+      sh: "immutable if set to true, ensures that data stored in the ConfigMap cannot be updated (only object metadata can be modified)."
+      t: "`$BOOLEAN`"
+    }
+    kind: {
+      h: "Kind"
+      n: "kind"
+      r: false
+      sh: "Kind is a string value representing the REST resource this object represents."
+      t: "`$STRING`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "metadata is the standard object's metadata."
+      t: "`$ANY`"
+    }
+  }
+
+  name: "config_map_list"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/v1/namespaces/{namespace}/configmaps"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "allow_watch_bookmark"
+                or: "allowWatchBookmarks"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "continue"
+                or: "continue"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_selector"
+                or: "fieldSelector"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "label_selector"
+                or: "labelSelector"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "resource_version"
+                or: "resourceVersion"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "resource_version_match"
+                or: "resourceVersionMatch"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "send_initial_event"
+                or: "sendInitialEvents"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "shard_selector"
+                or: "shardSelector"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "timeout_second"
+                or: "timeoutSeconds"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "watch"
+                or: "watch"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/namespaces/{namespace}/configmaps"
+          q: {
+            exist: [
+              "allow_watch_bookmark"
+              "continue"
+              "field_selector"
+              "label_selector"
+              "limit"
+              "namespace_id"
+              "pretty"
+              "resource_version"
+              "resource_version_match"
+              "send_initial_event"
+              "shard_selector"
+              "timeout_second"
+              "watch"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "configmaps"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.items`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/v1/configmaps"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "allow_watch_bookmark"
+                or: "allowWatchBookmarks"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "continue"
+                or: "continue"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_selector"
+                or: "fieldSelector"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "label_selector"
+                or: "labelSelector"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "resource_version"
+                or: "resourceVersion"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "resource_version_match"
+                or: "resourceVersionMatch"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "send_initial_event"
+                or: "sendInitialEvents"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "shard_selector"
+                or: "shardSelector"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "timeout_second"
+                or: "timeoutSeconds"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "watch"
+                or: "watch"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/configmaps"
+          q: {
+            exist: [
+              "allow_watch_bookmark"
+              "continue"
+              "field_selector"
+              "label_selector"
+              "limit"
+              "pretty"
+              "resource_version"
+              "resource_version_match"
+              "send_initial_event"
+              "shard_selector"
+              "timeout_second"
+              "watch"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "configmaps"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.items`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.namespace")]
+  ]
+
+}

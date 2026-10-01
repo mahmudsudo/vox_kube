@@ -1,0 +1,23 @@
+# BasicEvictionFlow
+
+main: kit: flow: BasicEvictionFlow:
+{
+  entity: "eviction",
+  kind: "basic",
+  name: "BasicEvictionFlow",
+  step: [
+    {
+      i: {
+        ref: "eviction_ref01"
+      }
+
+      m: {
+        name: "name01",
+        namespace_id: "namespace01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicEvictionFlow"
+}

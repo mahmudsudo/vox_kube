@@ -1,0 +1,9 @@
+# BasicAccountsV1SafelistFlow
+
+main: kit: flow: BasicAccountsV1SafelistFlow:
+{
+  entity: "accounts_v1_safelist",
+  kind: "basic",
+  name: "BasicAccountsV1SafelistFlow",
+  "key$": "BasicAccountsV1SafelistFlow"
+}

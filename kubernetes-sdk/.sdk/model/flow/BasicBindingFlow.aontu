@@ -1,0 +1,22 @@
+# BasicBindingFlow
+
+main: kit: flow: BasicBindingFlow:
+{
+  entity: "binding",
+  kind: "basic",
+  name: "BasicBindingFlow",
+  step: [
+    {
+      i: {
+        ref: "binding_ref01"
+      }
+
+      m: {
+        namespace_id: "namespace01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicBindingFlow"
+}

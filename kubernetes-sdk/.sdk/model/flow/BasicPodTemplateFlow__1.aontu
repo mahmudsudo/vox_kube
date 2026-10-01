@@ -1,0 +1,33 @@
+# BasicPodTemplateFlow
+
+main: kit: flow: BasicPodTemplateFlow:
+{
+  entity: "pod_template",
+  kind: "basic",
+  name: "BasicPodTemplateFlow",
+  step: [
+    {
+      i: {
+        ref: "pod_template_ref01",
+        srcdatavar: "pod_template_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "pod_template01",
+        namespace_id: "namespace01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-pod_template_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPodTemplateFlow"
+}

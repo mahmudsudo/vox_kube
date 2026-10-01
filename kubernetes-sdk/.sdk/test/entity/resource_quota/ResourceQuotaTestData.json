@@ -1,0 +1,69 @@
+{
+  "existing": {
+    "resource_quota": {
+      "RESOURCE_QUOTA00": {
+        "apiVersion": "s32",
+        "kind": "s33",
+        "metadata": "s34",
+        "spec": "s35",
+        "status": "s36",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "RESOURCE_QUOTA00"
+      },
+      "RESOURCE_QUOTA01": {
+        "apiVersion": "s64",
+        "kind": "s65",
+        "metadata": "s66",
+        "spec": "s67",
+        "status": "s68",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "RESOURCE_QUOTA01"
+      },
+      "RESOURCE_QUOTA02": {
+        "apiVersion": "s96",
+        "kind": "s97",
+        "metadata": "s98",
+        "spec": "s99",
+        "status": "s9a",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "RESOURCE_QUOTA02"
+      }
+    }
+  },
+  "new": {
+    "resource_quota": {
+      "resource_quota_ref01": {
+        "apiVersion": "sc8",
+        "kind": "sc9",
+        "metadata": "sca",
+        "spec": "scb",
+        "status": "scc"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/namespaces/{namespace}/resourcequotas/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/resourcequotas/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/resourcequotas/{name}/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/resourcequotas/{name}/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

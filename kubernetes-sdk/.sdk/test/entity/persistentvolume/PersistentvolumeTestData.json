@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "persistentvolume": {
+      "PERSISTENTVOLUME00": {
+        "id": "PERSISTENTVOLUME00",
+        "object": "s1f",
+        "type": "s20"
+      },
+      "PERSISTENTVOLUME01": {
+        "id": "PERSISTENTVOLUME01",
+        "object": "s3d",
+        "type": "s3e"
+      },
+      "PERSISTENTVOLUME02": {
+        "id": "PERSISTENTVOLUME02",
+        "object": "s5b",
+        "type": "s5c"
+      }
+    }
+  },
+  "new": {
+    "persistentvolume": {
+      "persistentvolume_ref01": {
+        "object": "s79",
+        "type": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/watch/persistentvolumes/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/persistentvolumes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

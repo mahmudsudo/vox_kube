@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "persistentvolumeclaim": {
+      "PERSISTENTVOLUMECLAIM00": {
+        "id": "PERSISTENTVOLUMECLAIM00",
+        "object": "s1f",
+        "type": "s20",
+        "namespace_id": "NAMESPACE01"
+      },
+      "PERSISTENTVOLUMECLAIM01": {
+        "id": "PERSISTENTVOLUMECLAIM01",
+        "object": "s3d",
+        "type": "s3e",
+        "namespace_id": "NAMESPACE01"
+      },
+      "PERSISTENTVOLUMECLAIM02": {
+        "id": "PERSISTENTVOLUMECLAIM02",
+        "object": "s5b",
+        "type": "s5c",
+        "namespace_id": "NAMESPACE01"
+      }
+    }
+  },
+  "new": {
+    "persistentvolumeclaim": {
+      "persistentvolumeclaim_ref01": {
+        "object": "s79",
+        "type": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/watch/namespaces/{namespace}/persistentvolumeclaims/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/namespaces/{namespace}/persistentvolumeclaims": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/persistentvolumeclaims": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+# Entity: accounts_v1_secondary_auth_token
+
+main: kit: entity: accounts_v1_secondary_auth_token: {
+
+  alias: field: {}
+
+  name: "accounts_v1_secondary_auth_token"
+  op: {
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /v1/AuthTokens/Secondary"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "suppress_email_notification"
+                or: "SuppressEmailNotification"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/v1/AuthTokens/Secondary"
+          q: {
+            exist: [
+              "suppress_email_notification"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "AuthTokens"
+            }
+            {
+              lit: "Secondary"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

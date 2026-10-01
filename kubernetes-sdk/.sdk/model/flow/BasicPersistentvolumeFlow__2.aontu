@@ -1,0 +1,28 @@
+# BasicPersistentvolumeFlow
+
+main: kit: flow: BasicPersistentvolumeFlow:
+{
+  entity: "persistentvolume",
+  kind: "basic",
+  name: "BasicPersistentvolumeFlow",
+  step: [
+    {
+      i: {
+        ref: "persistentvolume_ref01",
+        srcdatavar: "persistentvolume_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-persistentvolume_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPersistentvolumeFlow"
+}

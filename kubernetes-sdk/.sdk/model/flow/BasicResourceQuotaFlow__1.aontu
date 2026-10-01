@@ -1,0 +1,56 @@
+# BasicResourceQuotaFlow
+
+main: kit: flow: BasicResourceQuotaFlow:
+{
+  entity: "resource_quota",
+  kind: "basic",
+  name: "BasicResourceQuotaFlow",
+  step: [
+    {
+      d: {
+        namespace_id: "namespace01"
+      }
+
+      i: {
+        ref: "resource_quota_ref01",
+        srcdatavar: "resource_quota_ref01_data",
+        suffix: "_up0",
+        textfield: "apiVersion"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-resource_quota_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "resource_quota_ref01",
+        srcdatavar: "resource_quota_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "resource_quota01",
+        namespace_id: "namespace01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-resource_quota_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicResourceQuotaFlow"
+}

@@ -1,0 +1,75 @@
+# Entity: secondary
+
+main: kit: entity: secondary: {
+
+  alias: field: {}
+
+  fields: {
+    account_sid: {
+      h: "Account Sid"
+      n: "account_sid"
+      r: false
+      t: "`$STRING`"
+    }
+    date_created: {
+      h: "Date Created"
+      n: "date_created"
+      r: false
+      t: "`$STRING`"
+    }
+    date_updated: {
+      h: "Date Updated"
+      n: "date_updated"
+      r: false
+      t: "`$STRING`"
+    }
+    secondary_auth_token: {
+      h: "Secondary Auth Token"
+      n: "secondary_auth_token"
+      r: false
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "secondary"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/AuthTokens/Secondary"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/AuthTokens/Secondary"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "AuthTokens"
+            }
+            {
+              lit: "Secondary"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

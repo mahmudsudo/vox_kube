@@ -1,0 +1,143 @@
+{
+  "existing": {
+    "event": {
+      "EVENT00": {
+        "action": "sbe",
+        "apiVersion": "sbf",
+        "count": 192,
+        "eventTime": "sc1",
+        "firstTimestamp": "sc2",
+        "id": "EVENT00",
+        "involvedObject": "sc4",
+        "kind": "sc5",
+        "lastTimestamp": "sc6",
+        "message": "sc7",
+        "metadata": "sc8",
+        "object": "sc9",
+        "reason": "sca",
+        "related": "scb",
+        "reportingComponent": "scc",
+        "reportingInstance": "scd",
+        "series": "sce",
+        "source": "scf",
+        "type": "sd0",
+        "namespace_id": "NAMESPACE01"
+      },
+      "EVENT01": {
+        "action": "s17c",
+        "apiVersion": "s17d",
+        "count": 382,
+        "eventTime": "s17f",
+        "firstTimestamp": "s180",
+        "id": "EVENT01",
+        "involvedObject": "s182",
+        "kind": "s183",
+        "lastTimestamp": "s184",
+        "message": "s185",
+        "metadata": "s186",
+        "object": "s187",
+        "reason": "s188",
+        "related": "s189",
+        "reportingComponent": "s18a",
+        "reportingInstance": "s18b",
+        "series": "s18c",
+        "source": "s18d",
+        "type": "s18e",
+        "namespace_id": "NAMESPACE01"
+      },
+      "EVENT02": {
+        "action": "s23a",
+        "apiVersion": "s23b",
+        "count": 572,
+        "eventTime": "s23d",
+        "firstTimestamp": "s23e",
+        "id": "EVENT02",
+        "involvedObject": "s240",
+        "kind": "s241",
+        "lastTimestamp": "s242",
+        "message": "s243",
+        "metadata": "s244",
+        "object": "s245",
+        "reason": "s246",
+        "related": "s247",
+        "reportingComponent": "s248",
+        "reportingInstance": "s249",
+        "series": "s24a",
+        "source": "s24b",
+        "type": "s24c",
+        "namespace_id": "NAMESPACE01"
+      }
+    }
+  },
+  "new": {
+    "event": {
+      "event_ref01": {
+        "action": "s2f8",
+        "apiVersion": "s2f9",
+        "count": 762,
+        "eventTime": "s2fb",
+        "firstTimestamp": "s2fc",
+        "involvedObject": "s2fe",
+        "kind": "s2ff",
+        "lastTimestamp": "s300",
+        "message": "s301",
+        "metadata": "s302",
+        "object": "s303",
+        "reason": "s304",
+        "related": "s305",
+        "reportingComponent": "s306",
+        "reportingInstance": "s307",
+        "series": "s308",
+        "source": "s309",
+        "type": "s30a"
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/namespaces/{namespace}/events": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/events": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/events": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/namespaces/{namespace}/events/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/namespaces/{namespace}/events": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/events": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/events/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/events/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/events/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

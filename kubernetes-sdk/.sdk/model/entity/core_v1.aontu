@@ -1,0 +1,4759 @@
+# Entity: core_v1
+
+main: kit: entity: core_v1: {
+
+  alias: field: {}
+
+  fields: {
+    apiVersion: {
+      h: "Api Version"
+      n: "apiVersion"
+      r: false
+      sh: "APIVersion defines the versioned schema of this representation of an object."
+      t: "`$STRING`"
+    }
+    automountServiceAccountToken: {
+      h: "Automount Service Account Token"
+      n: "automountServiceAccountToken"
+      r: false
+      sh: "automountServiceAccountToken indicates whether pods running as this service account should have an API token automatically mounted."
+      t: "`$BOOLEAN`"
+    }
+    imagePullSecrets: {
+      h: "Image Pull Secrets"
+      n: "imagePullSecrets"
+      r: false
+      sh: "imagePullSecrets is a list of references to secrets in the same namespace to use for pulling any images in pods that reference this ServiceAccount."
+      t: "`$ARRAY`"
+    }
+    kind: {
+      h: "Kind"
+      n: "kind"
+      r: false
+      sh: "Kind is a string value representing the REST resource this object represents."
+      t: "`$STRING`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "metadata is the standard object metadata."
+      t: "`$ANY`"
+    }
+    secrets: {
+      h: "Secrets"
+      n: "secrets"
+      r: false
+      sh: "secrets is a list of the secrets in the same namespace that pods running using this ServiceAccount are allowed to use."
+      t: "`$ARRAY`"
+    }
+    spec: {
+      h: "Spec"
+      n: "spec"
+      r: false
+      sh: "spec defines the desired characteristics of a volume requested by a pod author."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 2
+        depth: 9
+      }
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "status represents the current information/status of a persistent volume claim."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 2
+        depth: 5
+      }
+    }
+    template: {
+      h: "Template"
+      n: "template"
+      r: false
+      sh: "template defines the pods that will be created from this pod template."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 47
+        depth: 31
+      }
+    }
+  }
+
+  name: "core_v1"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /api/v1/namespaces/{namespace}/persistentvolumeclaims"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/namespaces/{namespace}/persistentvolumeclaims"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "persistentvolumeclaims"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/namespaces/{namespace}/podtemplates"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/namespaces/{namespace}/podtemplates"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "podtemplates"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/namespaces/{namespace}/replicationcontrollers"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/namespaces/{namespace}/replicationcontrollers"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "replicationcontrollers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/namespaces/{namespace}/resourcequotas"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/namespaces/{namespace}/resourcequotas"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "resourcequotas"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/namespaces/{namespace}/serviceaccounts"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/namespaces/{namespace}/serviceaccounts"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "serviceaccounts"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/persistentvolumes"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/persistentvolumes"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "pretty"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "persistentvolumes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/namespaces/{namespace}/pods/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/namespaces/{namespace}/pods/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "namespace_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "pods"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/namespaces/{namespace}/services/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/namespaces/{namespace}/services/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "namespace_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "services"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "pod_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "namespace_id"
+              "path"
+              "pod_id"
+            ]
+          }
+          r: {
+            param: {
+              name: "pod_id"
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "pods"
+            }
+            {
+              var: "pod_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "service_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "namespace_id"
+              "path"
+              "service_id"
+            ]
+          }
+          r: {
+            param: {
+              name: "service_id"
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "services"
+            }
+            {
+              var: "service_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/nodes/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/nodes/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "path"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "nodes"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/nodes/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "node_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/nodes/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "node_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              name: "node_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "nodes"
+            }
+            {
+              var: "node_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/v1/persistentvolumes"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "allow_watch_bookmark"
+                or: "allowWatchBookmarks"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "continue"
+                or: "continue"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_selector"
+                or: "fieldSelector"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "label_selector"
+                or: "labelSelector"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "resource_version"
+                or: "resourceVersion"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "resource_version_match"
+                or: "resourceVersionMatch"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "send_initial_event"
+                or: "sendInitialEvents"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "shard_selector"
+                or: "shardSelector"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "timeout_second"
+                or: "timeoutSeconds"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "watch"
+                or: "watch"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/persistentvolumes"
+          q: {
+            exist: [
+              "allow_watch_bookmark"
+              "continue"
+              "field_selector"
+              "label_selector"
+              "limit"
+              "pretty"
+              "resource_version"
+              "resource_version_match"
+              "send_initial_event"
+              "shard_selector"
+              "timeout_second"
+              "watch"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "persistentvolumes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.items`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/v1/namespaces/{namespace}/pods/{name}/log"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "container"
+                or: "container"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "follow"
+                or: "follow"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "insecure_skip_tls_verify_backend"
+                or: "insecureSkipTLSVerifyBackend"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "limit_byte"
+                or: "limitBytes"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "previous"
+                or: "previous"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "since_second"
+                or: "sinceSeconds"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "stream"
+                or: "stream"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "tail_line"
+                or: "tailLines"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "timestamp"
+                or: "timestamps"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/namespaces/{namespace}/pods/{name}/log"
+          q: {
+            exist: [
+              "container"
+              "follow"
+              "insecure_skip_tls_verify_backend"
+              "limit_byte"
+              "name"
+              "namespace_id"
+              "pretty"
+              "previous"
+              "since_second"
+              "stream"
+              "tail_line"
+              "timestamp"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "pods"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "log"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/v1/namespaces/{namespace}/pods/{name}/exec"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "command"
+                or: "command"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "container"
+                or: "container"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "stderr"
+                or: "stderr"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "stdin"
+                or: "stdin"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "stdout"
+                or: "stdout"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "tty"
+                or: "tty"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/namespaces/{namespace}/pods/{name}/exec"
+          q: {
+            exist: [
+              "command"
+              "container"
+              "name"
+              "namespace_id"
+              "stderr"
+              "stdin"
+              "stdout"
+              "tty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "pods"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "exec"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/v1/namespaces/{namespace}/pods/{name}/attach"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "container"
+                or: "container"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "stderr"
+                or: "stderr"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "stdin"
+                or: "stdin"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "stdout"
+                or: "stdout"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "tty"
+                or: "tty"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/namespaces/{namespace}/pods/{name}/attach"
+          q: {
+            exist: [
+              "container"
+              "name"
+              "namespace_id"
+              "stderr"
+              "stdin"
+              "stdout"
+              "tty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "pods"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "attach"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/v1/namespaces/{namespace}/pods/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/namespaces/{namespace}/pods/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "namespace_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "pods"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/v1/namespaces/{namespace}/services/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/namespaces/{namespace}/services/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "namespace_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "services"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/v1/namespaces/{namespace}/pods/{name}/portforward"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "port"
+                or: "ports"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/namespaces/{namespace}/pods/{name}/portforward"
+          q: {
+            exist: [
+              "name"
+              "namespace_id"
+              "port"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "pods"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "portforward"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "pod_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "namespace_id"
+              "path"
+              "pod_id"
+            ]
+          }
+          r: {
+            param: {
+              name: "pod_id"
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "pods"
+            }
+            {
+              var: "pod_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "service_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "namespace_id"
+              "path"
+              "service_id"
+            ]
+          }
+          r: {
+            param: {
+              name: "service_id"
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "services"
+            }
+            {
+              var: "service_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/v1/nodes/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/nodes/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "path"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "nodes"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/v1/nodes/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "node_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/nodes/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "node_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              name: "node_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "nodes"
+            }
+            {
+              var: "node_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    patch: {
+      name: "patch"
+      points: [
+        {
+          co: {
+            id: "PATCH /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "force"
+                or: "force"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "force"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "persistentvolumeclaims"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /api/v1/namespaces/{namespace}/podtemplates/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "force"
+                or: "force"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/namespaces/{namespace}/podtemplates/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "force"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "podtemplates"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "force"
+                or: "force"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "force"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "replicationcontrollers"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /api/v1/namespaces/{namespace}/resourcequotas/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "force"
+                or: "force"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/namespaces/{namespace}/resourcequotas/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "force"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "resourcequotas"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /api/v1/namespaces/{namespace}/serviceaccounts/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "force"
+                or: "force"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/namespaces/{namespace}/serviceaccounts/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "force"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "serviceaccounts"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /api/v1/persistentvolumes/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "force"
+                or: "force"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/persistentvolumes/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "force"
+              "name"
+              "pretty"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "persistentvolumes"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /api/v1/namespaces/{namespace}/pods/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/namespaces/{namespace}/pods/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "namespace_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "pods"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /api/v1/namespaces/{namespace}/services/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/namespaces/{namespace}/services/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "namespace_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "services"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "pod_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "namespace_id"
+              "path"
+              "pod_id"
+            ]
+          }
+          r: {
+            param: {
+              name: "pod_id"
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "pods"
+            }
+            {
+              var: "pod_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "service_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "namespace_id"
+              "path"
+              "service_id"
+            ]
+          }
+          r: {
+            param: {
+              name: "service_id"
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "services"
+            }
+            {
+              var: "service_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /api/v1/nodes/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/nodes/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "path"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "nodes"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /api/v1/nodes/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "node_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/api/v1/nodes/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "node_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              name: "node_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "nodes"
+            }
+            {
+              var: "node_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /api/v1/persistentvolumes"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "continue"
+                or: "continue"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_selector"
+                or: "fieldSelector"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "grace_period_second"
+                or: "gracePeriodSeconds"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "ignore_store_read_error_with_cluster_breaking_potential"
+                or: "ignoreStoreReadErrorWithClusterBreakingPotential"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "label_selector"
+                or: "labelSelector"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "orphan_dependent"
+                or: "orphanDependents"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "propagation_policy"
+                or: "propagationPolicy"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "resource_version"
+                or: "resourceVersion"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "resource_version_match"
+                or: "resourceVersionMatch"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "send_initial_event"
+                or: "sendInitialEvents"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "shard_selector"
+                or: "shardSelector"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "timeout_second"
+                or: "timeoutSeconds"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/v1/persistentvolumes"
+          q: {
+            exist: [
+              "continue"
+              "dry_run"
+              "field_selector"
+              "grace_period_second"
+              "ignore_store_read_error_with_cluster_breaking_potential"
+              "label_selector"
+              "limit"
+              "orphan_dependent"
+              "pretty"
+              "propagation_policy"
+              "resource_version"
+              "resource_version_match"
+              "send_initial_event"
+              "shard_selector"
+              "timeout_second"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "persistentvolumes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /api/v1/namespaces/{namespace}/pods/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/v1/namespaces/{namespace}/pods/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "namespace_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "pods"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /api/v1/namespaces/{namespace}/services/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/v1/namespaces/{namespace}/services/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "namespace_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "services"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "pod_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "namespace_id"
+              "path"
+              "pod_id"
+            ]
+          }
+          r: {
+            param: {
+              name: "pod_id"
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "pods"
+            }
+            {
+              var: "pod_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "service_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "namespace_id"
+              "path"
+              "service_id"
+            ]
+          }
+          r: {
+            param: {
+              name: "service_id"
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "services"
+            }
+            {
+              var: "service_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /api/v1/nodes/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/v1/nodes/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "path"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "nodes"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /api/v1/nodes/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "node_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/v1/nodes/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "node_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              name: "node_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "nodes"
+            }
+            {
+              var: "node_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "persistentvolumeclaims"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /api/v1/namespaces/{namespace}/podtemplates/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/namespaces/{namespace}/podtemplates/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "podtemplates"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "replicationcontrollers"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /api/v1/namespaces/{namespace}/resourcequotas/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/namespaces/{namespace}/resourcequotas/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "resourcequotas"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /api/v1/namespaces/{namespace}/serviceaccounts/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/namespaces/{namespace}/serviceaccounts/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "name"
+              "namespace_id"
+              "pretty"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "serviceaccounts"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /api/v1/persistentvolumes/{name}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dry_run"
+                or: "dryRun"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_manager"
+                or: "fieldManager"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "field_validation"
+                or: "fieldValidation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/persistentvolumes/{name}"
+          q: {
+            exist: [
+              "dry_run"
+              "field_manager"
+              "field_validation"
+              "name"
+              "pretty"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "persistentvolumes"
+            }
+            {
+              var: "name"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /api/v1/namespaces/{namespace}/pods/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/namespaces/{namespace}/pods/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "namespace_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "pods"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /api/v1/namespaces/{namespace}/services/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/namespaces/{namespace}/services/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "namespace_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "services"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "pod_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "namespace_id"
+              "path"
+              "pod_id"
+            ]
+          }
+          r: {
+            param: {
+              name: "pod_id"
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "pods"
+            }
+            {
+              var: "pod_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "namespace_id"
+                or: "namespace"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "service_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "namespace_id"
+              "path"
+              "service_id"
+            ]
+          }
+          r: {
+            param: {
+              name: "service_id"
+              namespace: "namespace_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "namespaces"
+            }
+            {
+              var: "namespace_id"
+            }
+            {
+              lit: "services"
+            }
+            {
+              var: "service_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /api/v1/nodes/{name}/proxy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "name"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/nodes/{name}/proxy"
+          q: {
+            exist: [
+              "name"
+              "path"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "nodes"
+            }
+            {
+              var: "name"
+            }
+            {
+              lit: "proxy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /api/v1/nodes/{name}/proxy/{path}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "node_id"
+                or: "name"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "path"
+                or: "path"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/v1/nodes/{name}/proxy/{path}"
+          q: {
+            exist: [
+              "node_id"
+              "path"
+            ]
+          }
+          r: {
+            param: {
+              name: "node_id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "nodes"
+            }
+            {
+              var: "node_id"
+            }
+            {
+              lit: "proxy"
+            }
+            {
+              var: "path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.namespace")]
+    [path("$.main.kit.entity.node")]
+    [path("$.main.kit.entity.persistentvolume")]
+    [path("$.main.kit.entity.namespace") path("$.main.kit.entity.persistentvolumeclaim")]
+    [path("$.main.kit.entity.namespace") path("$.main.kit.entity.pod")]
+    [path("$.main.kit.entity.namespace") path("$.main.kit.entity.podtemplate")]
+    [path("$.main.kit.entity.namespace") path("$.main.kit.entity.replicationcontroller")]
+    [path("$.main.kit.entity.namespace") path("$.main.kit.entity.resourcequota")]
+    [path("$.main.kit.entity.namespace") path("$.main.kit.entity.serviceaccount")]
+    [path("$.main.kit.entity.namespace") path("$.main.kit.entity.service")]
+    [path("$.main.kit.entity.node")]
+    [path("$.main.kit.entity.namespace") path("$.main.kit.entity.pod")]
+    [path("$.main.kit.entity.namespace") path("$.main.kit.entity.service")]
+  ]
+
+}

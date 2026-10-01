@@ -1,0 +1,55 @@
+{
+  "existing": {
+    "binding": {
+      "BINDING00": {
+        "apiVersion": "s28",
+        "kind": "s29",
+        "metadata": "s2a",
+        "target": "s2b",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "BINDING00"
+      },
+      "BINDING01": {
+        "apiVersion": "s50",
+        "kind": "s51",
+        "metadata": "s52",
+        "target": "s53",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "BINDING01"
+      },
+      "BINDING02": {
+        "apiVersion": "s78",
+        "kind": "s79",
+        "metadata": "s7a",
+        "target": "s7b",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "BINDING02"
+      }
+    }
+  },
+  "new": {
+    "binding": {
+      "binding_ref01": {
+        "apiVersion": "sa0",
+        "kind": "sa1",
+        "metadata": "sa2",
+        "target": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/namespaces/{namespace}/pods/{name}/binding": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/namespaces/{namespace}/bindings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

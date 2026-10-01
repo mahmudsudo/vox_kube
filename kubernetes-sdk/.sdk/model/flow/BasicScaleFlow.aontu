@@ -1,0 +1,56 @@
+# BasicScaleFlow
+
+main: kit: flow: BasicScaleFlow:
+{
+  entity: "scale",
+  kind: "basic",
+  name: "BasicScaleFlow",
+  step: [
+    {
+      d: {
+        namespace_id: "namespace01"
+      }
+
+      i: {
+        ref: "scale_ref01",
+        srcdatavar: "scale_ref01_data",
+        suffix: "_up0",
+        textfield: "apiVersion"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-scale_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "scale_ref01",
+        srcdatavar: "scale_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "scale01",
+        namespace_id: "namespace01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-scale_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicScaleFlow"
+}

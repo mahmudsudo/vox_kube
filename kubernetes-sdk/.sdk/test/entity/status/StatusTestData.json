@@ -1,0 +1,169 @@
+{
+  "existing": {
+    "status": {
+      "STATUS00": {
+        "apiVersion": "s32",
+        "kind": "s33",
+        "metadata": "s34",
+        "spec": "s35",
+        "status": "s36",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "STATUS00"
+      },
+      "STATUS01": {
+        "apiVersion": "s64",
+        "kind": "s65",
+        "metadata": "s66",
+        "spec": "s67",
+        "status": "s68",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "STATUS01"
+      },
+      "STATUS02": {
+        "apiVersion": "s96",
+        "kind": "s97",
+        "metadata": "s98",
+        "spec": "s99",
+        "status": "s9a",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "STATUS02"
+      }
+    }
+  },
+  "new": {
+    "status": {
+      "status_ref01": {
+        "apiVersion": "sc8",
+        "kind": "sc9",
+        "metadata": "sca",
+        "spec": "scb",
+        "status": "scc"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/resourcequotas/{name}/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/persistentvolumes/{name}/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/configmaps": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/endpoints": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/events": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/limitranges": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/persistentvolumeclaims": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/pods": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/podtemplates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/replicationcontrollers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/resourcequotas": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/secrets": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/serviceaccounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/services": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/configmaps/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/endpoints/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/events/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/limitranges/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/replicationcontrollers/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/secrets/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/nodes/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

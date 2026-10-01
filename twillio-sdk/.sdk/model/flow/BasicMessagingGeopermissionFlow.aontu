@@ -1,0 +1,46 @@
+# BasicMessagingGeopermissionFlow
+
+main: kit: flow: BasicMessagingGeopermissionFlow:
+{
+  entity: "messaging_geopermission",
+  kind: "basic",
+  name: "BasicMessagingGeopermissionFlow",
+  step: [
+    {
+      i: {
+        ref: "messaging_geopermission_ref01",
+        srcdatavar: "messaging_geopermission_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-messaging_geopermission_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "messaging_geopermission_ref01",
+        srcdatavar: "messaging_geopermission_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-messaging_geopermission_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMessagingGeopermissionFlow"
+}

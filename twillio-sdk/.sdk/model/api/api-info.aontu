@@ -1,0 +1,40 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        email: "support@twilio.com"
+        name: "Twilio Support"
+        url: "https://support.twilio.com"
+      }
+      description: "This is the public Twilio REST API."
+      license: {
+        name: "Apache 2.0"
+        url: "https://www.apache.org/licenses/LICENSE-2.0.html"
+      }
+      security: {
+        in: "header"
+        name: "Authorization"
+        prefix: "Basic"
+        scheme: "accountSid_authToken"
+        type: "http"
+      }
+      servers: [
+        {
+          url: "https://accounts.twilio.com"
+        }
+      ]
+      summary: "This is the public Twilio REST API."
+      termsOfService: "https://www.twilio.com/legal/tos"
+      title: "Twilio - Accounts"
+      version: "1.0.0"
+      website: "https://accounts.twilio.com"
+      "x-twilio": {
+        apiStandards: "v0.1"
+      }
+    }
+  }
+}
+

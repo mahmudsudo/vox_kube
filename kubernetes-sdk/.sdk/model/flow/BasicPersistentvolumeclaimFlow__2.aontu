@@ -1,0 +1,28 @@
+# BasicPersistentvolumeclaimFlow
+
+main: kit: flow: BasicPersistentvolumeclaimFlow:
+{
+  entity: "persistentvolumeclaim",
+  kind: "basic",
+  name: "BasicPersistentvolumeclaimFlow",
+  step: [
+    {
+      i: {
+        ref: "persistentvolumeclaim_ref01",
+        srcdatavar: "persistentvolumeclaim_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-persistentvolumeclaim_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPersistentvolumeclaimFlow"
+}

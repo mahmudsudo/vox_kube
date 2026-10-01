@@ -1,0 +1,28 @@
+# BasicResourcequotaFlow
+
+main: kit: flow: BasicResourcequotaFlow:
+{
+  entity: "resourcequota",
+  kind: "basic",
+  name: "BasicResourcequotaFlow",
+  step: [
+    {
+      i: {
+        ref: "resourcequota_ref01",
+        srcdatavar: "resourcequota_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-resourcequota_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicResourcequotaFlow"
+}

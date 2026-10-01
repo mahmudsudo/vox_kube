@@ -1,0 +1,55 @@
+{
+  "existing": {
+    "pod_template": {
+      "POD_TEMPLATE00": {
+        "apiVersion": "s28",
+        "kind": "s29",
+        "metadata": "s2a",
+        "template": "s2b",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "POD_TEMPLATE00"
+      },
+      "POD_TEMPLATE01": {
+        "apiVersion": "s50",
+        "kind": "s51",
+        "metadata": "s52",
+        "template": "s53",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "POD_TEMPLATE01"
+      },
+      "POD_TEMPLATE02": {
+        "apiVersion": "s78",
+        "kind": "s79",
+        "metadata": "s7a",
+        "template": "s7b",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "POD_TEMPLATE02"
+      }
+    }
+  },
+  "new": {
+    "pod_template": {
+      "pod_template_ref01": {
+        "apiVersion": "sa0",
+        "kind": "sa1",
+        "metadata": "sa2",
+        "template": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/namespaces/{namespace}/podtemplates/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/podtemplates/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "existing": {
+    "persistent_volume_claim": {
+      "PERSISTENT_VOLUME_CLAIM00": {
+        "apiVersion": "s32",
+        "kind": "s33",
+        "metadata": "s34",
+        "spec": "s35",
+        "status": "s36",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "PERSISTENT_VOLUME_CLAIM00"
+      },
+      "PERSISTENT_VOLUME_CLAIM01": {
+        "apiVersion": "s64",
+        "kind": "s65",
+        "metadata": "s66",
+        "spec": "s67",
+        "status": "s68",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "PERSISTENT_VOLUME_CLAIM01"
+      },
+      "PERSISTENT_VOLUME_CLAIM02": {
+        "apiVersion": "s96",
+        "kind": "s97",
+        "metadata": "s98",
+        "spec": "s99",
+        "status": "s9a",
+        "name": "NAME01",
+        "namespace_id": "NAMESPACE01",
+        "id": "PERSISTENT_VOLUME_CLAIM02"
+      }
+    }
+  },
+  "new": {
+    "persistent_volume_claim": {
+      "persistent_volume_claim_ref01": {
+        "apiVersion": "sc8",
+        "kind": "sc9",
+        "metadata": "sca",
+        "spec": "scb",
+        "status": "scc"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "limit_range_list": {
+      "LIMIT_RANGE_LIST00": {
+        "apiVersion": "s28",
+        "kind": "s29",
+        "metadata": "s2a",
+        "spec": "s2b",
+        "namespace_id": "NAMESPACE01"
+      },
+      "LIMIT_RANGE_LIST01": {
+        "apiVersion": "s50",
+        "kind": "s51",
+        "metadata": "s52",
+        "spec": "s53",
+        "namespace_id": "NAMESPACE01"
+      },
+      "LIMIT_RANGE_LIST02": {
+        "apiVersion": "s78",
+        "kind": "s79",
+        "metadata": "s7a",
+        "spec": "s7b",
+        "namespace_id": "NAMESPACE01"
+      }
+    }
+  },
+  "new": {
+    "limit_range_list": {
+      "limit_range_list_ref01": {
+        "apiVersion": "sa0",
+        "kind": "sa1",
+        "metadata": "sa2",
+        "spec": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/namespaces/{namespace}/limitranges": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/limitranges": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

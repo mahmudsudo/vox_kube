@@ -1,0 +1,44 @@
+# BasicComponentStatusFlow
+
+main: kit: flow: BasicComponentStatusFlow:
+{
+  entity: "component_status",
+  kind: "basic",
+  name: "BasicComponentStatusFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "component_status_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "component_status_ref01",
+        srcdatavar: "component_status_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "component_status01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-component_status_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicComponentStatusFlow"
+}

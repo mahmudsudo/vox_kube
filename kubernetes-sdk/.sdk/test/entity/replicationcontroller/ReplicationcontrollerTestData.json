@@ -1,0 +1,87 @@
+{
+  "existing": {
+    "replicationcontroller": {
+      "REPLICATIONCONTROLLER00": {
+        "apiVersion": "s50",
+        "id": "REPLICATIONCONTROLLER00",
+        "kind": "s52",
+        "metadata": "s53",
+        "object": "s54",
+        "spec": "s55",
+        "status": "s56",
+        "type": "s57",
+        "namespace_id": "NAMESPACE01",
+        "name": "NAME01"
+      },
+      "REPLICATIONCONTROLLER01": {
+        "apiVersion": "sa0",
+        "id": "REPLICATIONCONTROLLER01",
+        "kind": "sa2",
+        "metadata": "sa3",
+        "object": "sa4",
+        "spec": "sa5",
+        "status": "sa6",
+        "type": "sa7",
+        "namespace_id": "NAMESPACE01",
+        "name": "NAME01"
+      },
+      "REPLICATIONCONTROLLER02": {
+        "apiVersion": "sf0",
+        "id": "REPLICATIONCONTROLLER02",
+        "kind": "sf2",
+        "metadata": "sf3",
+        "object": "sf4",
+        "spec": "sf5",
+        "status": "sf6",
+        "type": "sf7",
+        "namespace_id": "NAMESPACE01",
+        "name": "NAME01"
+      }
+    }
+  },
+  "new": {
+    "replicationcontroller": {
+      "replicationcontroller_ref01": {
+        "apiVersion": "s140",
+        "kind": "s142",
+        "metadata": "s143",
+        "object": "s144",
+        "spec": "s145",
+        "status": "s146",
+        "type": "s147"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/watch/namespaces/{namespace}/replicationcontrollers/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/namespaces/{namespace}/replicationcontrollers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/watch/replicationcontrollers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/namespaces/{namespace}/replicationcontrollers/{name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

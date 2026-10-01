@@ -1,0 +1,9 @@
+# BasicAccountsV1SecondaryAuthTokenFlow
+
+main: kit: flow: BasicAccountsV1SecondaryAuthTokenFlow:
+{
+  entity: "accounts_v1_secondary_auth_token",
+  kind: "basic",
+  name: "BasicAccountsV1SecondaryAuthTokenFlow",
+  "key$": "BasicAccountsV1SecondaryAuthTokenFlow"
+}

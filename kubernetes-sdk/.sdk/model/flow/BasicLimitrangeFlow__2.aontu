@@ -1,0 +1,28 @@
+# BasicLimitrangeFlow
+
+main: kit: flow: BasicLimitrangeFlow:
+{
+  entity: "limitrange",
+  kind: "basic",
+  name: "BasicLimitrangeFlow",
+  step: [
+    {
+      i: {
+        ref: "limitrange_ref01",
+        srcdatavar: "limitrange_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-limitrange_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLimitrangeFlow"
+}
